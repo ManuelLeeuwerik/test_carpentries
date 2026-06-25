@@ -16,10 +16,16 @@
     <loc>https://carpentries.github.io/workbench-template-md/aio.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/annotation_resistance.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/citation.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/genomes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/genomes_mlsa.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
@@ -43,10 +49,16 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/aio.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/annotation_resistance.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/citation.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/genomes.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/genomes_mlsa.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
@@ -73,6 +85,12 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/variant_calling.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/visualizing_results.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor-notes.html</loc>
   </url>
   <url>
@@ -89,5 +107,11 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/variant_calling.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/visualizing_results.html</loc>
   </url>
 </urlset>
