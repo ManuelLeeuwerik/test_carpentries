@@ -92,6 +92,11 @@ e.g. by providing the answer to a commonly-asked question.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+![Snakemake_logo](fig/snakemake_logo.png)
+
+
+![conda_logo](fig/conda_logo.png)
+
 
 ## Math
 
