@@ -19,6 +19,9 @@
     <loc>https://carpentries.github.io/workbench-template-md/citation.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/genomes.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
   </url>
   <url>
@@ -41,6 +44,9 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/genomes.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
