@@ -49,4 +49,4 @@ docs/
 # translation temp files
 po/*~
 
-instructors/*
+secret/*
