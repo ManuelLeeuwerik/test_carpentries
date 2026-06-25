@@ -17,7 +17,7 @@ carpentry: 'incubator'
 # carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'Lesson Title'
+title: 'Genomics course'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2026-06-25'
@@ -83,4 +83,4 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-carpentry_description: Lesson Description
+carpentry_description: This workshop is to teach the basics of genomics
