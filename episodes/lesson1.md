@@ -1,2 +1,0 @@
-# Test lesson 1
-
