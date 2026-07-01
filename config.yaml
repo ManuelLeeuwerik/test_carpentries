@@ -68,6 +68,7 @@ contact: 'team@carpentries.org'
 episodes: 
 - introduction.md
 - genomes_mlsa.md
+- mlsa-for-aspergillus.md
 - variant_calling.md
 - annotation_resistance.md
 - visualizing_results.md
