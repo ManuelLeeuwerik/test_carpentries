@@ -261,7 +261,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="variant_calling.html">3. Read mapping to reference genome, variant calling and phylogenomics</a>
+        <a href="mlsa-for-aspergillus.html">3. MLSA for Aspergillus fumigatus Genomes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -273,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="annotation_resistance.html">4. Annotating variants and resistance mutations</a>
+        <a href="variant_calling.html">4. Read mapping to reference genome, variant calling and phylogenomics</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -285,7 +285,19 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="visualizing_results.html">5. Using Markdown</a>
+        <a href="annotation_resistance.html">5. Annotating variants and resistance mutations</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="visualizing_results.html">6. Using Markdown</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -413,7 +425,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -445,7 +457,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -474,7 +486,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -558,7 +570,751 @@ any links that you are not going to use.
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section><section id="aio-variant_calling"><p>Content from <a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomics</a></p>
+</div></section><section id="aio-mlsa-for-aspergillus"><p>Content from <a href="mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></p>
+<hr>
+<p>Last updated on 2026-07-01 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/mlsa-for-aspergillus.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 55 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can a small set of conserved loci be used to compare
+<em>Aspergillus fumigatus</em> genomes?</li>
+<li>What does the MLSA workflow extract, align, and summarise?</li>
+<li>How should we interpret an MLSA tree in relation to isolate
+relatedness?</li>
+<li>What are the limitations of MLSA compared with whole-genome SNP
+analysis?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain the purpose of multilocus sequence analysis (MLSA) in an
+<em>A. fumigatus</em> genomics workflow.</li>
+<li>Identify the genome assemblies, reference loci, and configuration
+settings used by the MLSA pipeline.</li>
+<li>Inspect the selected loci and understand how the workflow validates
+and extracts them.</li>
+<li>Locate the main MLSA outputs: gene QC tables, per-locus alignments,
+concatenated alignment, and tree file.</li>
+<li>Interpret an MLSA tree cautiously, distinguishing genetic similarity
+from epidemiological transmission.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>In this episode we use multilocus sequence analysis, abbreviated
+<strong>MLSA</strong>, to compare <em>A. fumigatus</em> genome
+assemblies. MLSA focuses on a small number of conserved genes or loci
+rather than on the full genome. The selected loci are extracted from
+each assembly, aligned, concatenated, and used to infer a phylogenetic
+tree.</p>
+<p>This is useful as an early comparison of isolates. It can show
+whether genomes are broadly similar at the selected loci and whether any
+isolate is unexpectedly distant from the rest of the sample pool.
+However, MLSA has lower resolution than whole-genome SNP analysis. For
+suspected transmission, outbreak reconstruction, or fine-scale
+relatedness between very similar <em>A. fumigatus</em> isolates,
+whole-genome SNP analysis is usually more informative.</p>
+<p>In this course, MLSA is not treated as a final epidemiological
+answer. It is a first, structured way to ask:</p>
+<blockquote>
+<p>Do these <em>A. fumigatus</em> isolates appear broadly related at a
+small set of conserved loci, and are any samples unusual enough to
+deserve closer inspection?</p>
+</blockquote>
+<div id="mlsa-and-mlst-are-related-but-not-identical" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="mlsa-and-mlst-are-related-but-not-identical" class="callout-inner">
+<h3 class="callout-title">MLSA and MLST are related but not
+identical</h3>
+<div class="callout-content">
+<p><strong>MLSA</strong> means multilocus sequence analysis: comparison
+of several loci, often for phylogenetic placement.</p>
+<p><strong>MLST</strong> means multilocus sequence typing: assignment of
+allele profiles or sequence types using a formal typing scheme.</p>
+<p>This episode uses the term <strong>MLSA</strong> because the workflow
+extracts selected loci, aligns them, concatenates them, and builds a
+phylogenetic tree. If a different workflow assigns formal allele numbers
+or sequence types, that would be described as MLST.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-the-workflow-does">What the workflow does<a class="anchor" aria-label="anchor" href="#what-the-workflow-does"></a>
+</h2>
+<hr class="half-width">
+<p>The MLSA workflow starts from genome assemblies and a reference gene
+database. The pipeline then identifies the configured loci in each
+genome and uses them to build a multilocus tree.</p>
+<p>Conceptually, the workflow performs the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>read the analysis settings from
+<code>config/config.yaml</code>;</li>
+<li>validate the reference gene FASTA file;</li>
+<li>find the selected loci in each genome assembly;</li>
+<li>keep the best locus hit for each genome and gene;</li>
+<li>check gene presence, coverage, copy number, and fragmentation;</li>
+<li>align each locus across passing samples;</li>
+<li>concatenate the per-locus alignments;</li>
+<li>infer and reroot an MLSA tree;</li>
+<li>optionally compute ANI summaries if ANI is enabled.</li>
+</ol>
+<p>The full workflow may contain more rules than we discuss here. In
+this episode we focus on the parts needed to understand and interpret
+the MLSA result.</p>
+</section><section><h2 class="section-heading" id="input-files-used-in-this-episode">Input files used in this episode<a class="anchor" aria-label="anchor" href="#input-files-used-in-this-episode"></a>
+</h2>
+<hr class="half-width">
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr>
+<th>Input</th>
+<th>Expected location</th>
+<th>Role in the workflow</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Local genome assemblies</td>
+<td><code>genomes/</code></td>
+<td>One assembled genome per sample. The sample name is derived from the
+file name.</td>
+</tr>
+<tr>
+<td>Reference gene database</td>
+<td><code>config/ref-genes.fas</code></td>
+<td>FASTA file containing the reference loci to search for in each
+genome.</td>
+</tr>
+<tr>
+<td>Workflow configuration</td>
+<td><code>config/config.yaml</code></td>
+<td>Defines selected genes, tree method, ANI option, and public genome
+settings.</td>
+</tr>
+<tr>
+<td>Optional public genome list</td>
+<td><code>config/public_genomes.txt</code></td>
+<td>Lists NCBI assembly accessions that should be downloaded and
+included.</td>
+</tr>
+</tbody>
+</table>
+<p>Supported local genome extensions are <code>.fna</code>,
+<code>.fa</code>, <code>.fasta</code>, and <code>.fas</code>.</p>
+<div id="keep-one-biological-question-in-mind" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="keep-one-biological-question-in-mind" class="callout-inner">
+<h3 class="callout-title">Keep one biological question in mind</h3>
+<div class="callout-content">
+<p>Throughout the day we use the same <em>A. fumigatus</em> sample pool.
+For this episode, the question is not yet whether one patient infected
+another, or whether a specific resistance mutation is present. The
+question is narrower:</p>
+<blockquote>
+<p>How do these isolates compare when we analyse a small set of
+conserved loci?</p>
+</blockquote>
+<p>Later episodes add higher-resolution SNP analysis and resistance
+annotation.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="inspecting-the-selected-mlsa-loci">Inspecting the selected MLSA loci<a class="anchor" aria-label="anchor" href="#inspecting-the-selected-mlsa-loci"></a>
+</h2>
+<hr class="half-width">
+<p>The selected loci are defined in <code>config/config.yaml</code>. In
+the example configuration, the workflow analyses four loci:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Gene configuration — names must match headers in ref-genes.fas exactly</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">genes</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> calmodulin</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> actin</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> rpb2</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> benA</span></span></code></pre>
+</div>
+<p>These names must match the gene names used in the reference gene
+FASTA headers. The workflow validates this automatically at the start of
+the run.</p>
+<p>The reference FASTA headers must follow this structure:</p>
+<pre class="text"><code>&gt;{strain}|{gene} optional description</code></pre>
+<p>For example:</p>
+<pre class="text"><code>&gt;Af293|actin NC_007199.1:c1114851-1113100 act1</code></pre>
+<p>Only the part before the first space is required for parsing. In this
+example, <code>Af293</code> is the strain identifier and
+<code>actin</code> is the gene name. The gene name must match one of the
+names listed under <code>genes</code> in
+<code>config/config.yaml</code>.</p>
+<div id="challenge-1-which-loci-will-be-analysed" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-which-loci-will-be-analysed" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Which loci will be analysed?</h3>
+<div class="callout-content">
+<p>From the top level of the workflow directory, inspect the configured
+gene list.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="fu">grep</span> <span class="at">-A</span> 10 <span class="st">'^genes:'</span> config/config.yaml</span></code></pre>
+</div>
+<ol style="list-style-type: decimal">
+<li>Which loci are listed?</li>
+<li>Do these gene names also appear in the reference gene FASTA
+headers?</li>
+<li>Why is exact spelling important here?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Expected reasoning
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>The configured loci are the entries under <code>genes:</code> in
+<code>config/config.yaml</code>. In the example configuration these
+are:</p>
+<pre class="text"><code><span><span class="va">calmodulin</span></span>
+<span><span class="va">actin</span></span>
+<span><span class="va">rpb2</span></span>
+<span><span class="va">benA</span></span></code></pre>
+<p>To check that the names occur in the reference gene database, inspect
+the FASTA headers:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="fu">grep</span> <span class="st">'^&gt;'</span> config/ref-genes.fas <span class="kw">|</span> <span class="fu">head</span></span></code></pre>
+</div>
+<p>The workflow expects headers of the form:</p>
+<pre class="text"><code>&gt;{strain}|{gene} optional description</code></pre>
+<p>Exact spelling matters because the workflow uses these names to
+decide which sequences belong to each locus. If <code>benA</code> is
+listed in the configuration but the reference database uses a different
+spelling, that locus will not be matched as intended.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="inspecting-the-genome-assemblies">Inspecting the genome assemblies<a class="anchor" aria-label="anchor" href="#inspecting-the-genome-assemblies"></a>
+</h2>
+<hr class="half-width">
+<p>Genome assemblies are placed in the <code>genomes/</code> directory.
+Each file should contain one assembled genome. The downstream sample
+name is derived from the file name, without the extension.</p>
+<p>Use <code>ls</code> to inspect the available local genomes:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="fu">ls</span> genomes/</span></code></pre>
+</div>
+<p>If the configuration also points to
+<code>config/public_genomes.txt</code>, the workflow can download
+additional public assemblies from NCBI and process them in the same way
+as local genomes.</p>
+<p>The public genome file should contain at least these columns:</p>
+<pre class="text"><code>sample	assembly</code></pre>
+<p>where <code>sample</code> is the name used by the workflow and
+<code>assembly</code> is an NCBI assembly accession beginning with
+<code>GCA_</code> or <code>GCF_</code>.</p>
+<div id="why-include-public-genomes" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-include-public-genomes" class="callout-inner">
+<h3 class="callout-title">Why include public genomes?</h3>
+<div class="callout-content">
+<p>Public genomes can provide useful context. For example, they can help
+show whether course isolates are close to a known reference strain or
+whether they are broadly separated from other published <em>A.
+fumigatus</em> genomes.</p>
+<p>They should not be used as a substitute for carefully selected
+clinical or epidemiological comparators. Their value depends on the
+quality of the assembly, the metadata available, and the biological
+question being asked.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="running-or-inspecting-the-workflow">Running or inspecting the workflow<a class="anchor" aria-label="anchor" href="#running-or-inspecting-the-workflow"></a>
+</h2>
+<hr class="half-width">
+<p>For teaching, it is often useful to begin with a dry run. A dry run
+asks Snakemake what it would do without executing the commands.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 2 <span class="at">--use-conda</span> <span class="at">-n</span> results/phylogenetics/MLSA.nwk</span></code></pre>
+</div>
+<p>The target <code>results/phylogenetics/MLSA.nwk</code> is the final
+rerooted MLSA tree. If the course environment has already been prepared,
+the output may already exist and Snakemake may report that no work is
+required.</p>
+<p>To run the target when instructed:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 2 <span class="at">--use-conda</span> results/phylogenetics/MLSA.nwk</span></code></pre>
+</div>
+<p>For larger datasets or classroom servers with more resources, the
+number of cores may be increased:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 10 <span class="at">--use-conda</span> results/phylogenetics/MLSA.nwk</span></code></pre>
+</div>
+<div id="dry-runs-are-part-of-reproducible-analysis" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="dry-runs-are-part-of-reproducible-analysis" class="callout-inner">
+<h3 class="callout-title">Dry runs are part of reproducible
+analysis</h3>
+<div class="callout-content">
+<p>A dry run is not only a safety check. It also helps you understand
+how the workflow connects inputs to outputs. Before running a workflow
+on new data, it is good practice to ask:</p>
+<ul>
+<li>Which files will be created?</li>
+<li>Which rules will run?</li>
+<li>Which existing results will be reused?</li>
+<li>Does the requested target match the biological question?</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="main-outputs">Main outputs<a class="anchor" aria-label="anchor" href="#main-outputs"></a>
+</h2>
+<hr class="half-width">
+<p>The MLSA workflow creates several outputs. Some are final results;
+others are intermediate files that help with quality control and
+interpretation.</p>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr>
+<th>Output</th>
+<th>Meaning</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>results/QC/ref_genes.validated</code></td>
+<td>Marker file showing that the reference gene database passed
+validation.</td>
+</tr>
+<tr>
+<td><code>resources/db/ref-genes.validated.fas</code></td>
+<td>Validated version of the reference gene FASTA file.</td>
+</tr>
+<tr>
+<td><code>results/QC/gene-qc-detail.tsv</code></td>
+<td>Detailed gene-level QC information.</td>
+</tr>
+<tr>
+<td><code>results/QC/gene-qc-matrix.tsv</code></td>
+<td>Matrix summarising gene presence or QC status across samples.</td>
+</tr>
+<tr>
+<td><code>results/QC/gene-qc-matrix.pdf</code></td>
+<td>Visual summary of the gene QC matrix.</td>
+</tr>
+<tr>
+<td><code>results/genes/aligned/{gene}.fas</code></td>
+<td>Per-locus alignment for each configured gene.</td>
+</tr>
+<tr>
+<td><code>results/genes/concat/concat.fas</code></td>
+<td>Concatenated multilocus alignment used for tree inference.</td>
+</tr>
+<tr>
+<td><code>results/genes/concat/concat.tab</code></td>
+<td>Coordinates of each locus within the concatenated alignment.</td>
+</tr>
+<tr>
+<td><code>results/genes/concat/concat.part</code></td>
+<td>Partition file derived from the concatenation table.</td>
+</tr>
+<tr>
+<td><code>results/phylogenetics/MLSA.nwk</code></td>
+<td>Final rerooted MLSA tree in Newick format.</td>
+</tr>
+<tr>
+<td><code>results/ANI/{method}/{method}_table.tsv</code></td>
+<td>ANI identity matrix, if ANI analysis is enabled.</td>
+</tr>
+</tbody>
+</table>
+<p>The most important result for this episode is:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA.nwk</span></span></code></pre>
+<p>This file stores the tree structure. It can be opened in a tree
+viewer such as iTOL, FigTree, or another Newick-compatible viewer.</p>
+</section><section><h2 class="section-heading" id="checking-gene-qc-before-interpreting-the-tree">Checking gene QC before interpreting the tree<a class="anchor" aria-label="anchor" href="#checking-gene-qc-before-interpreting-the-tree"></a>
+</h2>
+<hr class="half-width">
+<p>Before interpreting the tree, inspect the gene QC output. A tree
+based on incomplete or poor-quality locus recovery can be
+misleading.</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="fu">head</span> results/QC/gene-qc-matrix.tsv</span></code></pre>
+</div>
+<p>Depending on the exact output format used in the course dataset, this
+table should help you answer questions such as:</p>
+<ul>
+<li>Did each sample contain each selected locus?</li>
+<li>Were any loci fragmented?</li>
+<li>Were multiple copies detected for a locus that should usually be
+single-copy?</li>
+<li>Were any samples excluded before alignment or tree inference?</li>
+</ul>
+<div id="challenge-2-which-samples-are-suitable-for-mlsa-interpretation" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-which-samples-are-suitable-for-mlsa-interpretation" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Which samples are suitable for
+MLSA interpretation?</h3>
+<div class="callout-content">
+<p>Open the gene QC matrix:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="fu">less</span> <span class="at">-S</span> results/QC/gene-qc-matrix.tsv</span></code></pre>
+</div>
+<p>Use the table to identify whether all samples have suitable data for
+the configured loci.</p>
+<ol style="list-style-type: decimal">
+<li>Are any samples missing one or more loci?</li>
+<li>Are any loci flagged because of copy number or fragmentation?</li>
+<li>Would you trust a sample with incomplete locus recovery in the same
+way as a complete sample?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Expected reasoning
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>The exact answer depends on the course dataset. In general:</p>
+<ul>
+<li>a sample with all configured loci passing QC is suitable for routine
+MLSA interpretation;</li>
+<li>a sample missing one or more loci should be interpreted
+cautiously;</li>
+<li>a sample with fragmented or multiple-copy hits may need manual
+review;</li>
+<li>poor locus recovery can affect placement in the tree.</li>
+</ul>
+<p>If a sample has problematic gene QC, do not treat its tree position
+as equally reliable without further inspection.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="from-loci-to-tree">From loci to tree<a class="anchor" aria-label="anchor" href="#from-loci-to-tree"></a>
+</h2>
+<hr class="half-width">
+<p>The workflow aligns each selected locus separately. For example, if
+<code>actin</code> is one of the selected loci, its alignment is written
+to:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">genes</span><span class="op">/</span><span class="va">aligned</span><span class="op">/</span><span class="va">actin.fas</span></span></code></pre>
+<p>The per-locus alignments are then concatenated into one multilocus
+alignment:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">genes</span><span class="op">/</span><span class="va">concat</span><span class="op">/</span><span class="va">concat.fas</span></span></code></pre>
+<p>This concatenated alignment is the input for tree inference. The
+workflow supports different tree methods, configured in
+<code>config/config.yaml</code>:</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="fu">tree</span><span class="kw">:</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a><span class="at">  </span><span class="fu">method</span><span class="kw">:</span><span class="at"> iqtree</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a><span class="at">  </span><span class="fu">bootstrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000</span></span></code></pre>
+</div>
+<p>In the example configuration, <code>iqtree</code> is used with 1000
+bootstrap replicates. Other supported methods are <code>raxml</code> and
+<code>fasttree</code>. If <code>fasttree</code> is selected, bootstrap
+settings are not used by this workflow.</p>
+<p>The final tree is rerooted and written to:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA.nwk</span></span></code></pre>
+<div id="what-bootstrap-support-means" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="what-bootstrap-support-means" class="callout-inner">
+<h3 class="callout-title">What bootstrap support means</h3>
+<div class="callout-content">
+<p>Bootstrap values indicate how consistently a grouping is recovered
+when the data are resampled. High bootstrap support can increase
+confidence that a grouping is stable for the analysed alignment.</p>
+<p>Bootstrap support does not prove epidemiological transmission. It
+only describes support for a grouping in the analysed sequence data.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="opening-the-mlsa-tree">Opening the MLSA tree<a class="anchor" aria-label="anchor" href="#opening-the-mlsa-tree"></a>
+</h2>
+<hr class="half-width">
+<p>Open <code>results/phylogenetics/MLSA.nwk</code> in the tree viewer
+selected for the course. When reading the tree, focus first on the
+following features:</p>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr>
+<th>Feature</th>
+<th>Interpretation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Tip labels</td>
+<td>Sample names. These should match the genome file names or public
+genome sample names.</td>
+</tr>
+<tr>
+<td>Clusters</td>
+<td>Samples that are grouped together based on the selected loci.</td>
+</tr>
+<tr>
+<td>Branch length</td>
+<td>Genetic difference in the analysed alignment, not necessarily
+calendar time.</td>
+</tr>
+<tr>
+<td>Bootstrap value</td>
+<td>Support for a grouping, if the selected tree method provides support
+values.</td>
+</tr>
+<tr>
+<td>Outlying sample</td>
+<td>A sample that is distant from the others and may need closer
+inspection.</td>
+</tr>
+</tbody>
+</table>
+<div id="challenge-3-interpret-the-mlsa-tree-cautiously" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-3-interpret-the-mlsa-tree-cautiously" class="callout-inner">
+<h3 class="callout-title">Challenge 3: Interpret the MLSA tree
+cautiously</h3>
+<div class="callout-content">
+<p>Open the final tree:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA.nwk</span></span></code></pre>
+<p>Answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>Which samples cluster most closely together?</li>
+<li>Is any sample clearly separated from the rest?</li>
+<li>Do any clusters correspond to metadata provided in the course, such
+as source, sampling date, or resistance status?</li>
+<li>What can you conclude from this tree?</li>
+<li>What can you <strong>not</strong> conclude from this tree?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Expected reasoning
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<p>You can conclude that some samples are more similar than others at
+the selected MLSA loci. You may also identify samples that are
+unexpectedly distant or clusters that deserve closer inspection in later
+analyses.</p>
+<p>You cannot conclude transmission direction from this tree. You also
+cannot conclude that two isolates are part of an outbreak based only on
+MLSA. For that, you would need higher-resolution genomic analysis and
+relevant epidemiological information, such as dates, locations, patient
+links, environmental sampling, and laboratory context.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="optional-ani-output">Optional ANI output<a class="anchor" aria-label="anchor" href="#optional-ani-output"></a>
+</h2>
+<hr class="half-width">
+<p>The workflow can also compute average nucleotide identity,
+abbreviated <strong>ANI</strong>, if <code>ani_method</code> is enabled
+in <code>config/config.yaml</code>.</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" tabindex="-1" aria-label="code-block-21-1"></a><span class="fu">ani_method</span><span class="kw">:</span><span class="at"> skani</span></span></code></pre>
+</div>
+<p>Supported options are:</p>
+<pre class="text"><code>skani, fastani, pyani, none</code></pre>
+<p>ANI compares genome assemblies at a broader whole-genome level. In
+this lesson, ANI is best treated as a contextual summary rather than as
+the main relatedness method. It can help identify unexpectedly divergent
+genomes or confirm that genomes are broadly comparable, but it is not a
+replacement for SNP-based phylogenomics when fine-scale isolate
+relatedness is the question.</p>
+<p>If ANI is enabled, inspect the table:</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1" aria-label="code-block-23-1"></a><span class="fu">less</span> <span class="at">-S</span> results/ANI/skani/skani_table.tsv</span></code></pre>
+</div>
+<p>If a different ANI method is configured, replace <code>skani</code>
+with the configured method name.</p>
+<div id="challenge-4-compare-mlsa-and-ani" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-4-compare-mlsa-and-ani" class="callout-inner">
+<h3 class="callout-title">Challenge 4: Compare MLSA and ANI</h3>
+<div class="callout-content">
+<p>If ANI output is available, compare the ANI table with the MLSA
+tree.</p>
+<ol style="list-style-type: decimal">
+<li>Do samples that cluster together in the MLSA tree also show high
+ANI?</li>
+<li>Is any sample unexpectedly divergent by ANI?</li>
+<li>Does ANI change your interpretation of the MLSA tree, or does it
+mainly provide broader context?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  Expected reasoning
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p>ANI and MLSA answer related but different questions. MLSA uses
+selected loci, while ANI summarises similarity across larger portions of
+the genome assembly. If both analyses show that one sample is distant
+from the others, that sample should be reviewed carefully. If ANI is
+uniformly high across the dataset, it supports broad comparability of
+the genomes but does not provide the same fine-scale resolution as
+whole-genome SNP analysis.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="interpreting-mlsa-in-this-course">Interpreting MLSA in this course<a class="anchor" aria-label="anchor" href="#interpreting-mlsa-in-this-course"></a>
+</h2>
+<hr class="half-width">
+<p>By the end of this episode, you should be able to describe the MLSA
+result in a short, cautious paragraph. For example:</p>
+<blockquote>
+<p>The MLSA workflow extracted the configured loci from the <em>A.
+fumigatus</em> genome assemblies, aligned the loci, concatenated them,
+and inferred a tree. Several isolates clustered together at these loci,
+while one or more samples may require closer inspection depending on the
+gene QC results and tree placement. This result provides an initial view
+of relatedness, but it is not sufficient by itself to infer transmission
+or resistance.</p>
+</blockquote>
+<p>This interpretation prepares us for the next stage: genome-wide read
+mapping, variant calling, and SNP-based phylogenomics.</p>
+<div id="a-cautious-interpretation-is-a-strong-interpretation" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="a-cautious-interpretation-is-a-strong-interpretation" class="callout-inner">
+<h3 class="callout-title">A cautious interpretation is a strong
+interpretation</h3>
+<div class="callout-content">
+<p>Genomic results are most useful when their limitations are stated
+clearly. For MLSA, the key limitation is resolution. Closely related
+isolates may appear similar at a small number of loci but still differ
+across the rest of the genome.</p>
+<p>Use MLSA to orient yourself. Use whole-genome SNP analysis for
+finer-scale questions.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>MLSA compares selected loci rather than whole genomes.</li>
+<li>The configured locus names must match the reference gene FASTA
+headers exactly.</li>
+<li>Gene QC should be inspected before interpreting the MLSA tree.</li>
+<li>The final MLSA tree is written to
+<code>results/phylogenetics/MLSA.nwk</code>.</li>
+<li>MLSA can suggest broad relatedness but cannot by itself establish
+transmission.</li>
+<li>Whole-genome SNP analysis provides higher resolution for closely
+related <em>A. fumigatus</em> isolates.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-variant_calling"><p>Content from <a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomics</a></p>
 <hr>
 <p>Last updated on 2026-06-25 |
 
@@ -841,8 +1597,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/aio.html",
   "dateCreated": "2026-06-25",
-  "dateModified": "2026-06-30",
-  "datePublished": "2026-06-30"
+  "dateModified": "2026-07-01",
+  "datePublished": "2026-07-01"
 }
 
   </script><script>

@@ -261,7 +261,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="variant_calling.html">3. Read mapping to reference genome, variant calling and phylogenomics</a>
+        <a href="mlsa-for-aspergillus.html">3. MLSA for Aspergillus fumigatus Genomes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -273,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="annotation_resistance.html">4. Annotating variants and resistance mutations</a>
+        <a href="variant_calling.html">4. Read mapping to reference genome, variant calling and phylogenomics</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -285,7 +285,19 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="visualizing_results.html">5. Using Markdown</a>
+        <a href="annotation_resistance.html">5. Annotating variants and resistance mutations</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="visualizing_results.html">6. Using Markdown</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -361,7 +373,20 @@ with your lesson</li>
 <li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
 locally</li>
 </ul></section><section id="genomes_mlsa"><h2 class="section-heading"><a href="genomes_mlsa.html">Genomes and MLSAGenomes<a class="anchor" aria-label="anchor" href="#genomes"></a>MLSA<a class="anchor" aria-label="anchor" href="#mlsa"></a></a></h2>
-<hr class="half-width"></section><section id="variant_calling"><h2 class="section-heading"><a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomicsRead mapping to reference genome,<a class="anchor" aria-label="anchor" href="#read-mapping-to-reference-genome"></a>Variant calling and<a class="anchor" aria-label="anchor" href="#variant-calling-and"></a>Phylogenomics<a class="anchor" aria-label="anchor" href="#phylogenomics"></a></a></h2>
+<hr class="half-width"></section><section id="mlsa-for-aspergillus"><h2 class="section-heading"><a href="mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></h2>
+<hr class="half-width">
+<ul>
+<li>MLSA compares selected loci rather than whole genomes.</li>
+<li>The configured locus names must match the reference gene FASTA
+headers exactly.</li>
+<li>Gene QC should be inspected before interpreting the MLSA tree.</li>
+<li>The final MLSA tree is written to
+<code>results/phylogenetics/MLSA.nwk</code>.</li>
+<li>MLSA can suggest broad relatedness but cannot by itself establish
+transmission.</li>
+<li>Whole-genome SNP analysis provides higher resolution for closely
+related <em>A. fumigatus</em> isolates.</li>
+</ul></section><section id="variant_calling"><h2 class="section-heading"><a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomicsRead mapping to reference genome,<a class="anchor" aria-label="anchor" href="#read-mapping-to-reference-genome"></a>Variant calling and<a class="anchor" aria-label="anchor" href="#variant-calling-and"></a>Phylogenomics<a class="anchor" aria-label="anchor" href="#phylogenomics"></a></a></h2>
 <hr class="half-width"></section><section id="annotation_resistance"><h2 class="section-heading"><a href="annotation_resistance.html">Annotating variants and resistance mutationsAnnotating Variants<a class="anchor" aria-label="anchor" href="#annotating-variants"></a>Resistance mutations<a class="anchor" aria-label="anchor" href="#resistance-mutations"></a></a></h2>
 <hr class="half-width"></section><section id="visualizing_results"><h2 class="section-heading"><a href="visualizing_results.html">Using Markdown</a></h2>
 <hr class="half-width">
@@ -424,8 +449,8 @@ locally</li>
   "url": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
   "dateCreated": "2026-06-25",
-  "dateModified": "2026-06-30",
-  "datePublished": "2026-06-30"
+  "dateModified": "2026-07-01",
+  "datePublished": "2026-07-01"
 }
 
   </script><script>
