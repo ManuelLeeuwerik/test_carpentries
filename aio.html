@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Genomics course: All in One View</title>
+<title>Snakemake workshop for medical mycology: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -40,7 +40,7 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="This workshop is to teach the basics of genomics" src="assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
+        <img id="incubator-logo" alt="Snakemake workshop for medical mycology" src="assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
               <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
@@ -96,10 +96,10 @@
       <span class="menu-title">Menu</span>
     </button>
     <div class="nav-logo">
-      <img class="small-logo" alt="This workshop is to teach the basics of genomics" src="assets/images/incubator-logo-sm.svg">
+      <img class="small-logo" alt="Snakemake workshop for medical mycology" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Genomics course
+      Snakemake workshop for medical mycology
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +110,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Genomics course
+            Snakemake workshop for medical mycology
           </span>
         </li>
         <li class="nav-item">
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-workflows-snakemake.html">1. Reproducible workflows with Snakemake</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -248,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="genomes_mlsa.html">2. Genomes and MLSA</a>
+        <a href="02-mlsa-for-aspergillus.html">2. MLSA for Aspergillus fumigatus Genomes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -260,7 +260,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="mlsa-for-aspergillus.html">3. MLSA for Aspergillus fumigatus Genomes</a>
+        <a href="03-read-mapping.html">3. Read mapping and variant calling</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="variant_calling.html">4. Read mapping to reference genome, variant calling and phylogenomics</a>
+        <a href="04-building-snp-trees.html">4. Building and reading SNP trees</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -284,7 +284,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="annotation_resistance.html">5. Annotating variants and resistance mutations</a>
+        <a href="05-adding-samples.html">5. Adding a new sample to a workflow</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -296,7 +296,31 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="visualizing_results.html">6. Using Markdown</a>
+        <a href="06-annotation-resistance.html">6. Annotating variants and resistance mutations</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-visualising-and-interpretation.html">7. Visualising genomic results</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-online-resources.html">8. Online resources and interpretation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -359,11 +383,11 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>All in One View</h1>
         
-<section id="aio-introduction"><p>Content from <a href="introduction.html">Using Markdown</a></p>
+<section id="aio-01-workflows-snakemake"><p>Content from <a href="01-workflows-snakemake.html">Reproducible workflows with Snakemake</a></p>
 <hr>
-<p>Last updated on 2026-06-25 |
+<p>Last updated on 2026-07-02 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/01-workflows-snakemake.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -375,8 +399,10 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>What is Snakemake?</li>
+<li>What are the advantages of Snakemake?</li>
+<li>What does a Snakemake workflow do that a series of individual
+commands does not?</li>
 </ul>
 </div>
 </div>
@@ -386,9 +412,11 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Explain the purpose of a reproducible workflow.</li>
+<li>Identify the role of a configuration file, rules, inputs, outputs,
+and logs.</li>
+<li>Run or inspect a prepared Snakemake workflow without needing to
+understand every rule.</li>
 </ul>
 </div>
 </div>
@@ -398,117 +426,20 @@ challenge blocks</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
+<p>A “workflow”/“pipeline” is just individual steps (QC → trim →
+assemble) wired together so they always run in the same order on any new
+sample. Explain what a “workflow” is</p>
+</section><div class="section level1">
+<h1 id="could-useimplement-parts-of-the-bioinformatics-snakemake-presentation">Could use/implement parts of the bioinformatics Snakemake
+presentation!<a class="anchor" aria-label="anchor" href="#could-useimplement-parts-of-the-bioinformatics-snakemake-presentation"></a>
+</h1>
+<div class="section level2">
+<h2 id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
 </h2>
-<hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-<figure><img src="fig/snakemake_logo.png" alt="Snakemake_logo" class="figure mx-auto d-block"><div class="figcaption">Snakemake_logo</div>
-</figure><figure><img src="fig/conda_logo.png" alt="conda_logo" class="figure mx-auto d-block"><div class="figcaption">conda_logo</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<p>Learners inspect the prepared workflow folder: config/ data/
+resources/ results/ workflow/ logs/</p>
+<p>They then identify: - Where samples are listed - Where reference
+files are defined - Where outputs appear - Where logs are stored</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -517,14 +448,10 @@ this:</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>A workflow formalises an analysis so the same steps are applied
+consistently.</li>
+<li>Configuration files and sample sheets separate user choices from
+workflow code.</li>
 </ul>
 </div>
 </div>
@@ -533,30 +460,12 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-genomes_mlsa"><p>Content from <a href="genomes_mlsa.html">Genomes and MLSA</a></p>
-<hr>
-<p>Last updated on 2026-06-25 |
-
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/genomes_mlsa.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="section level1">
-<h1 id="genomes">Genomes<a class="anchor" aria-label="anchor" href="#genomes"></a>
-</h1>
 </div>
-<div class="section level1">
-<h1 id="mlsa">MLSA<a class="anchor" aria-label="anchor" href="#mlsa"></a>
-</h1>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</div></section><section id="aio-mlsa-for-aspergillus"><p>Content from <a href="mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></p>
+</div></section><section id="aio-02-mlsa-for-aspergillus"><p>Content from <a href="02-mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></p>
 <hr>
-<p>Last updated on 2026-07-01 |
+<p>Last updated on 2026-07-02 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/mlsa-for-aspergillus.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/02-mlsa-for-aspergillus.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -570,6 +479,7 @@ any links that you are not going to use.
 <ul>
 <li>How can a small set of conserved loci be used to compare
 <em>Aspergillus fumigatus</em> genomes?</li>
+<li>How can MLSA be used for species confirmation?</li>
 <li>What does the MLSA workflow extract, align, and summarise?</li>
 <li>How should we interpret an MLSA tree in relation to isolate
 relatedness?</li>
@@ -592,8 +502,6 @@ settings used by the MLSA pipeline.</li>
 and extracts them.</li>
 <li>Locate the main MLSA outputs: gene QC tables, per-locus alignments,
 concatenated alignment, and tree file.</li>
-<li>Interpret an MLSA tree cautiously, distinguishing genetic similarity
-from epidemiological transmission.</li>
 </ul>
 </div>
 </div>
@@ -612,17 +520,14 @@ tree.</p>
 <p>This is useful as an early comparison of isolates. It can show
 whether genomes are broadly similar at the selected loci and whether any
 isolate is unexpectedly distant from the rest of the sample pool.
-However, MLSA has lower resolution than whole-genome SNP analysis. For
-suspected transmission, outbreak reconstruction, or fine-scale
-relatedness between very similar <em>A. fumigatus</em> isolates,
-whole-genome SNP analysis is usually more informative.</p>
-<p>In this course, MLSA is not treated as a final epidemiological
-answer. It is a first, structured way to ask:</p>
-<blockquote>
-<p>Do these <em>A. fumigatus</em> isolates appear broadly related at a
-small set of conserved loci, and are any samples unusual enough to
-deserve closer inspection?</p>
-</blockquote>
+Furthermore can it be used to confirm species identification, by
+comparing the clustering to previously identified samples.</p>
+<p>However, MLSA has lower resolution than whole-genome SNP analysis.
+For suspected transmission, outbreak reconstruction, or relatedness
+between very similar <em>A. fumigatus</em> isolates, whole-genome SNP
+analysis is more informative.</p>
+<p>In this session we will use the following tool we developed:</p>
+<p><strong><a href="https://github.com/westerdijk-wm/snakemake-mlsa-ani/" class="external-link">snakemake-mlsa-ani</a></strong></p>
 <div id="mlsa-and-mlst-are-related-but-not-identical" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -635,7 +540,9 @@ identical</h3>
 <p><strong>MLSA</strong> means multilocus sequence analysis: comparison
 of several loci, often for phylogenetic placement.</p>
 <p><strong>MLST</strong> means multilocus sequence typing: assignment of
-allele profiles or sequence types using a formal typing scheme.</p>
+allele profiles or sequence types using a formal typing scheme. MLST is
+for example used for <em>Cryptococcus neofrmans</em> and <em>C.
+gattii</em> typing [(ref)][<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/" class="external-link uri">https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/</a>].</p>
 <p>This episode uses the term <strong>MLSA</strong> because the workflow
 extracts selected loci, aligns them, concatenates them, and builds a
 phylogenetic tree. If a different workflow assigns formal allele numbers
@@ -649,18 +556,18 @@ or sequence types, that would be described as MLST.</p>
 <p>The MLSA workflow starts from genome assemblies and a reference gene
 database. The pipeline then identifies the configured loci in each
 genome and uses them to build a multilocus tree.</p>
-<p>Conceptually, the workflow performs the following steps:</p>
+<p>The workflow performs the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>read the analysis settings from
-<code>config/config.yaml</code>;</li>
-<li>validate the reference gene FASTA file;</li>
-<li>find the selected loci in each genome assembly;</li>
-<li>keep the best locus hit for each genome and gene;</li>
-<li>check gene presence, coverage, copy number, and fragmentation;</li>
-<li>align each locus across passing samples;</li>
-<li>concatenate the per-locus alignments;</li>
-<li>infer and reroot an MLSA tree;</li>
-<li>optionally compute ANI summaries if ANI is enabled.</li>
+<li>Read the analysis settings from <code>config/config.yaml</code>
+</li>
+<li>Validate the reference gene FASTA file</li>
+<li>Find the selected loci in each genome assembly</li>
+<li>Keep the best locus hit for each genome and gene</li>
+<li>Check gene presence, coverage, copy number, and fragmentation</li>
+<li>Align each locus across passing samples</li>
+<li>Concatenate the per-locus alignments</li>
+<li>Infer and reroot an MLSA tree</li>
+<li>Optionally compute ANI summaries if ANI is enabled</li>
 </ol>
 <p>The full workflow may contain more rules than we discuss here. In
 this episode we focus on the parts needed to understand and interpret
@@ -676,7 +583,7 @@ the MLSA result.</p>
 </colgroup>
 <thead><tr>
 <th>Input</th>
-<th>Expected location</th>
+<th>Location</th>
 <th>Role in the workflow</th>
 </tr></thead>
 <tbody>
@@ -705,31 +612,7 @@ settings.</td>
 included.</td>
 </tr>
 </tbody>
-</table>
-<p>Supported local genome extensions are <code>.fna</code>,
-<code>.fa</code>, <code>.fasta</code>, and <code>.fas</code>.</p>
-<div id="keep-one-biological-question-in-mind" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="keep-one-biological-question-in-mind" class="callout-inner">
-<h3 class="callout-title">Keep one biological question in mind</h3>
-<div class="callout-content">
-<p>Throughout the day we use the same <em>A. fumigatus</em> sample pool.
-For this episode, the question is not yet whether one patient infected
-another, or whether a specific resistance mutation is present. The
-question is narrower:</p>
-<blockquote>
-<p>How do these isolates compare when we analyse a small set of
-conserved loci?</p>
-</blockquote>
-<p>Later episodes add higher-resolution SNP analysis and resistance
-annotation.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="inspecting-the-selected-mlsa-loci">Inspecting the selected MLSA loci<a class="anchor" aria-label="anchor" href="#inspecting-the-selected-mlsa-loci"></a>
+</table></section><section><h2 class="section-heading" id="inspecting-the-selected-mlsa-loci">Inspecting the selected MLSA loci<a class="anchor" aria-label="anchor" href="#inspecting-the-selected-mlsa-loci"></a>
 </h2>
 <hr class="half-width">
 <p>The selected loci are defined in <code>config/config.yaml</code>. In
@@ -737,7 +620,7 @@ the example configuration, the workflow analyses four loci:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Gene configuration — names must match headers in ref-genes.fas exactly</span></span>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co"># Gene configuration</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">genes</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> calmodulin</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> actin</span></span>
@@ -769,7 +652,11 @@ gene list.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="fu">grep</span> <span class="at">-A</span> 10 <span class="st">'^genes:'</span> config/config.yaml</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="co"># Print 10 lines from '^genes:' onwards</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="fu">grep</span> <span class="at">-A</span> 10 <span class="st">'^genes:'</span> config/config.yaml</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a><span class="co"># Inspect file</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a><span class="fu">less</span> config/config.yaml</span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
 <li>Which loci are listed?</li>
@@ -801,7 +688,8 @@ the FASTA headers:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="fu">grep</span> <span class="st">'^&gt;'</span> config/ref-genes.fas <span class="kw">|</span> <span class="fu">head</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="co"># Print lines starting with &gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a><span class="fu">grep</span> <span class="st">'^&gt;'</span> config/ref-genes.fas <span class="kw">|</span> <span class="fu">head</span></span></code></pre>
 </div>
 <p>The workflow expects headers of the form:</p>
 <pre class="text"><code>&gt;{strain}|{gene} optional description</code></pre>
@@ -831,7 +719,7 @@ additional public assemblies from NCBI and process them in the same way
 as local genomes.</p>
 <p>The public genome file should contain at least these columns:</p>
 <pre class="text"><code>sample	assembly</code></pre>
-<p>where <code>sample</code> is the name used by the workflow and
+<p>Where <code>sample</code> is the name used by the workflow and
 <code>assembly</code> is an NCBI assembly accession beginning with
 <code>GCA_</code> or <code>GCF_</code>.</p>
 <div id="why-include-public-genomes" class="callout">
@@ -842,43 +730,36 @@ as local genomes.</p>
 <div id="why-include-public-genomes" class="callout-inner">
 <h3 class="callout-title">Why include public genomes?</h3>
 <div class="callout-content">
-<p>Public genomes can provide useful context. For example, they can help
-show whether course isolates are close to a known reference strain or
-whether they are broadly separated from other published <em>A.
-fumigatus</em> genomes.</p>
-<p>They should not be used as a substitute for carefully selected
-clinical or epidemiological comparators. Their value depends on the
-quality of the assembly, the metadata available, and the biological
-question being asked.</p>
+<p>Public genomes can provide useful context. They can help show whether
+course isolates are close to a known reference strain or whether they
+are broadly separated from other published <em>Aspergillus</em> genomes.
+So for example including the reference genome for <em>Aspergillus
+lentulus</em>, <code>GCA_010724455.1</code>, will show if isolates which
+do not cluster with the other <em>A. fumigatus</em> strains might
+cluster with <em>A. lentulus</em>.</p>
+<p>The value of public genomes depends on the quality of the assembly,
+the metadata available, and the biological question being asked.</p>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="running-or-inspecting-the-workflow">Running or inspecting the workflow<a class="anchor" aria-label="anchor" href="#running-or-inspecting-the-workflow"></a>
 </h2>
 <hr class="half-width">
-<p>For teaching, it is often useful to begin with a dry run. A dry run
-asks Snakemake what it would do without executing the commands.</p>
+<p>It is often useful to begin with a dry run. A dry run asks Snakemake
+what it would do without executing the commands.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 2 <span class="at">--use-conda</span> <span class="at">-n</span> results/phylogenetics/MLSA.nwk</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 10 <span class="at">--use-conda</span> <span class="at">-n</span> results/phylogenetics/MLSA.nwk</span></code></pre>
 </div>
 <p>The target <code>results/phylogenetics/MLSA.nwk</code> is the final
-rerooted MLSA tree. If the course environment has already been prepared,
-the output may already exist and Snakemake may report that no work is
-required.</p>
-<p>To run the target when instructed:</p>
+rerooted MLSA tree.</p>
+<p>To run the workflow to produce the target, remove
+<code>-n</code>:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 2 <span class="at">--use-conda</span> results/phylogenetics/MLSA.nwk</span></code></pre>
-</div>
-<p>For larger datasets or classroom servers with more resources, the
-number of cores may be increased:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 10 <span class="at">--use-conda</span> results/phylogenetics/MLSA.nwk</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="ex">snakemake</span> <span class="at">--cores</span> 10 <span class="at">--use-conda</span> results/phylogenetics/MLSA.nwk</span></code></pre>
 </div>
 <div id="dry-runs-are-part-of-reproducible-analysis" class="callout">
 <div class="callout-square">
@@ -904,7 +785,7 @@ on new data, it is good practice to ask:</p>
 </section><section><h2 class="section-heading" id="main-outputs">Main outputs<a class="anchor" aria-label="anchor" href="#main-outputs"></a>
 </h2>
 <hr class="half-width">
-<p>The MLSA workflow creates several outputs. Some are final results;
+<p>The MLSA workflow creates several outputs. Some are final results,
 others are intermediate files that help with quality control and
 interpretation.</p>
 <table class="table">
@@ -918,21 +799,8 @@ interpretation.</p>
 </tr></thead>
 <tbody>
 <tr>
-<td><code>results/QC/ref_genes.validated</code></td>
-<td>Marker file showing that the reference gene database passed
-validation.</td>
-</tr>
-<tr>
-<td><code>resources/db/ref-genes.validated.fas</code></td>
-<td>Validated version of the reference gene FASTA file.</td>
-</tr>
-<tr>
 <td><code>results/QC/gene-qc-detail.tsv</code></td>
 <td>Detailed gene-level QC information.</td>
-</tr>
-<tr>
-<td><code>results/QC/gene-qc-matrix.tsv</code></td>
-<td>Matrix summarising gene presence or QC status across samples.</td>
 </tr>
 <tr>
 <td><code>results/QC/gene-qc-matrix.pdf</code></td>
@@ -959,28 +827,29 @@ validation.</td>
 <td>Final rerooted MLSA tree in Newick format.</td>
 </tr>
 <tr>
-<td><code>results/ANI/{method}/{method}_table.tsv</code></td>
-<td>ANI identity matrix, if ANI analysis is enabled.</td>
+<td><code>results/phylogenetics/MLSA_tree.pdf</code></td>
+<td>Visualization of MLSA tree.</td>
+</tr>
+<tr>
+<td><code>results/ANI/skani/skani_table.tsv</code></td>
+<td>ANI identity matrix, if skani analysis is enabled.</td>
+</tr>
+<tr>
+<td><code>results/ANI/skani/skani.pdf</code></td>
+<td>MLSA tree combined with ANI heatmap.</td>
 </tr>
 </tbody>
 </table>
-<p>The most important result for this episode is:</p>
-<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA.nwk</span></span></code></pre>
-<p>This file stores the tree structure. It can be opened in a tree
-viewer such as iTOL, FigTree, or another Newick-compatible viewer.</p>
+<p>The most important results for this episode are:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA_tree.pdf</span></span>
+<span><span class="va">results</span><span class="op">/</span><span class="va">ANI</span><span class="op">/</span><span class="va">skani</span><span class="op">/</span><span class="va">skani.pdf</span></span></code></pre>
 </section><section><h2 class="section-heading" id="checking-gene-qc-before-interpreting-the-tree">Checking gene QC before interpreting the tree<a class="anchor" aria-label="anchor" href="#checking-gene-qc-before-interpreting-the-tree"></a>
 </h2>
 <hr class="half-width">
 <p>Before interpreting the tree, inspect the gene QC output. A tree
 based on incomplete or poor-quality locus recovery can be
 misleading.</p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="fu">head</span> results/QC/gene-qc-matrix.tsv</span></code></pre>
-</div>
-<p>Depending on the exact output format used in the course dataset, this
-table should help you answer questions such as:</p>
+<p>This table should help you answer questions such as:</p>
 <ul>
 <li>Did each sample contain each selected locus?</li>
 <li>Were any loci fragmented?</li>
@@ -997,14 +866,8 @@ single-copy?</li>
 <h3 class="callout-title">Challenge 2: Which samples are suitable for
 MLSA interpretation?</h3>
 <div class="callout-content">
-<p>Open the gene QC matrix:</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="fu">less</span> <span class="at">-S</span> results/QC/gene-qc-matrix.tsv</span></code></pre>
-</div>
-<p>Use the table to identify whether all samples have suitable data for
-the configured loci.</p>
+<p>Open the gene QC matrix and use the table to identify whether all
+samples have suitable data for the configured loci.</p>
 <ol style="list-style-type: decimal">
 <li>Are any samples missing one or more loci?</li>
 <li>Are any loci flagged because of copy number or fragmentation?</li>
@@ -1023,18 +886,19 @@ way as a complete sample?</li>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>The exact answer depends on the course dataset. In general:</p>
+<p><strong>Placeholder</strong>, the answer depends on the course
+dataset.</p>
+<p>In general:</p>
 <ul>
-<li>a sample with all configured loci passing QC is suitable for routine
-MLSA interpretation;</li>
-<li>a sample missing one or more loci should be interpreted
-cautiously;</li>
-<li>a sample with fragmented or multiple-copy hits may need manual
-review;</li>
-<li>poor locus recovery can affect placement in the tree.</li>
+<li>A sample with all configured loci passing QC is suitable for routine
+MLSA interpretation.</li>
+<li>A sample with missing, fragmented or multiple-copy hits need manual
+review.</li>
+<li>Poor locus recovery can affect placement in the tree. If it is even
+possible to place in tree.</li>
 </ul>
-<p>If a sample has problematic gene QC, do not treat its tree position
-as equally reliable without further inspection.</p>
+<p>If a sample has problematic gene QC, manually inspect and curate the
+data where needed.</p>
 </div>
 </div>
 </div>
@@ -1052,12 +916,12 @@ alignment:</p>
 <p>This concatenated alignment is the input for tree inference. The
 workflow supports different tree methods, configured in
 <code>config/config.yaml</code>:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="fu">tree</span><span class="kw">:</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a><span class="at">  </span><span class="fu">method</span><span class="kw">:</span><span class="at"> iqtree</span></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a><span class="at">  </span><span class="fu">bootstrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="fu">tree</span><span class="kw">:</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a><span class="at">  </span><span class="fu">method</span><span class="kw">:</span><span class="at"> iqtree</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a><span class="at">  </span><span class="fu">bootstrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000</span></span></code></pre>
 </div>
 <p>In the example configuration, <code>iqtree</code> is used with 1000
 bootstrap replicates. Other supported methods are <code>raxml</code> and
@@ -1081,12 +945,11 @@ only describes support for a grouping in the analysed sequence data.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="opening-the-mlsa-tree">Opening the MLSA tree<a class="anchor" aria-label="anchor" href="#opening-the-mlsa-tree"></a>
+</section><section><h2 class="section-heading" id="viewing-the-mlsa-tree">Viewing the MLSA tree<a class="anchor" aria-label="anchor" href="#viewing-the-mlsa-tree"></a>
 </h2>
 <hr class="half-width">
-<p>Open <code>results/phylogenetics/MLSA.nwk</code> in the tree viewer
-selected for the course. When reading the tree, focus first on the
-following features:</p>
+<p>View <code>results/phylogenetics/MLSA_tree.pdf</code>. When reading
+the tree, focus first on the following features:</p>
 <table class="table">
 <colgroup>
 <col width="50%">
@@ -1108,13 +971,11 @@ genome sample names.</td>
 </tr>
 <tr>
 <td>Branch length</td>
-<td>Genetic difference in the analysed alignment, not necessarily
-calendar time.</td>
+<td>Genetic difference in the analysed alignment.</td>
 </tr>
 <tr>
 <td>Bootstrap value</td>
-<td>Support for a grouping, if the selected tree method provides support
-values.</td>
+<td>Support for a grouping.</td>
 </tr>
 <tr>
 <td>Outlying sample</td>
@@ -1123,17 +984,16 @@ inspection.</td>
 </tr>
 </tbody>
 </table>
-<div id="challenge-3-interpret-the-mlsa-tree-cautiously" class="callout challenge">
+<div id="challenge-3-interpret-the-mlsa-tree" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-3-interpret-the-mlsa-tree-cautiously" class="callout-inner">
-<h3 class="callout-title">Challenge 3: Interpret the MLSA tree
-cautiously</h3>
+<div id="challenge-3-interpret-the-mlsa-tree" class="callout-inner">
+<h3 class="callout-title">Challenge 3: Interpret the MLSA tree</h3>
 <div class="callout-content">
-<p>Open the final tree:</p>
-<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA.nwk</span></span></code></pre>
+<p>Inspect final tree:</p>
+<pre class="text"><code><span><span class="va">results</span><span class="op">/</span><span class="va">phylogenetics</span><span class="op">/</span><span class="va">MLSA_tree.pdf</span></span></code></pre>
 <p>Answer the following questions:</p>
 <ol style="list-style-type: decimal">
 <li>Which samples cluster most closely together?</li>
@@ -1168,33 +1028,32 @@ links, environmental sampling, and laboratory context.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="optional-ani-output">Optional ANI output<a class="anchor" aria-label="anchor" href="#optional-ani-output"></a>
+</section><section><h2 class="section-heading" id="ani-output">ANI output<a class="anchor" aria-label="anchor" href="#ani-output"></a>
 </h2>
 <hr class="half-width">
 <p>The workflow can also compute average nucleotide identity,
 abbreviated <strong>ANI</strong>, if <code>ani_method</code> is enabled
 in <code>config/config.yaml</code>.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" tabindex="-1" aria-label="code-block-21-1"></a><span class="fu">ani_method</span><span class="kw">:</span><span class="at"> skani</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="fu">ani_method</span><span class="kw">:</span><span class="at"> skani</span></span></code></pre>
 </div>
 <p>Supported options are:</p>
 <pre class="text"><code>skani, fastani, pyani, none</code></pre>
-<p>ANI compares genome assemblies at a broader whole-genome level. In
-this lesson, ANI is best treated as a contextual summary rather than as
-the main relatedness method. It can help identify unexpectedly divergent
-genomes or confirm that genomes are broadly comparable, but it is not a
-replacement for SNP-based phylogenomics when fine-scale isolate
-relatedness is the question.</p>
-<p>If ANI is enabled, inspect the table:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<p>ANI compares genome assemblies at a broader whole-genome level. It
+can help identify unexpectedly divergent genomes or confirm that genomes
+are broadly comparable.</p>
+<p>Inspect the table:</p>
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1" aria-label="code-block-23-1"></a><span class="fu">less</span> <span class="at">-S</span> results/ANI/skani/skani_table.tsv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1" aria-label="code-block-20-1"></a><span class="fu">less</span> results/ANI/skani/skani_table.tsv</span></code></pre>
 </div>
+<blockquote>
 <p>If a different ANI method is configured, replace <code>skani</code>
 with the configured method name.</p>
+</blockquote>
 <div id="challenge-4-compare-mlsa-and-ani" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1203,8 +1062,8 @@ with the configured method name.</p>
 <div id="challenge-4-compare-mlsa-and-ani" class="callout-inner">
 <h3 class="callout-title">Challenge 4: Compare MLSA and ANI</h3>
 <div class="callout-content">
-<p>If ANI output is available, compare the ANI table with the MLSA
-tree.</p>
+<p>Compare the ANI table with the MLSA tree by inspecting
+<code>results/ANI/skani/skani.pdf</code>.</p>
 <ol style="list-style-type: decimal">
 <li>Do samples that cluster together in the MLSA tree also show high
 ANI?</li>
@@ -1229,28 +1088,11 @@ selected loci, while ANI summarises similarity across larger portions of
 the genome assembly. If both analyses show that one sample is distant
 from the others, that sample should be reviewed carefully. If ANI is
 uniformly high across the dataset, it supports broad comparability of
-the genomes but does not provide the same fine-scale resolution as
-whole-genome SNP analysis.</p>
+the genomes.</p>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="interpreting-mlsa-in-this-course">Interpreting MLSA in this course<a class="anchor" aria-label="anchor" href="#interpreting-mlsa-in-this-course"></a>
-</h2>
-<hr class="half-width">
-<p>By the end of this episode, you should be able to describe the MLSA
-result in a short, cautious paragraph. For example:</p>
-<blockquote>
-<p>The MLSA workflow extracted the configured loci from the <em>A.
-fumigatus</em> genome assemblies, aligned the loci, concatenated them,
-and inferred a tree. Several isolates clustered together at these loci,
-while one or more samples may require closer inspection depending on the
-gene QC results and tree placement. This result provides an initial view
-of relatedness, but it is not sufficient by itself to infer transmission
-or resistance.</p>
-</blockquote>
-<p>This interpretation prepares us for the next stage: genome-wide read
-mapping, variant calling, and SNP-based phylogenomics.</p>
 <div id="a-cautious-interpretation-is-a-strong-interpretation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1281,8 +1123,6 @@ finer-scale questions.</p>
 <li>The configured locus names must match the reference gene FASTA
 headers exactly.</li>
 <li>Gene QC should be inspected before interpreting the MLSA tree.</li>
-<li>The final MLSA tree is written to
-<code>results/phylogenetics/MLSA.nwk</code>.</li>
 <li>MLSA can suggest broad relatedness but cannot by itself establish
 transmission.</li>
 <li>Whole-genome SNP analysis provides higher resolution for closely
@@ -1295,53 +1135,11 @@ related <em>A. fumigatus</em> isolates.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-variant_calling"><p>Content from <a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomics</a></p>
+</section></section><section id="aio-03-read-mapping"><p>Content from <a href="03-read-mapping.html">Read mapping and variant calling</a></p>
 <hr>
-<p>Last updated on 2026-06-25 |
+<p>Last updated on 2026-07-02 |
 
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/variant_calling.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="section level1">
-<h1 id="read-mapping-to-reference-genome">Read mapping to reference genome,<a class="anchor" aria-label="anchor" href="#read-mapping-to-reference-genome"></a>
-</h1>
-</div>
-<div class="section level1">
-<h1 id="variant-calling-and">Variant calling and<a class="anchor" aria-label="anchor" href="#variant-calling-and"></a>
-</h1>
-</div>
-<div class="section level1">
-<h1 id="phylogenomics">Phylogenomics<a class="anchor" aria-label="anchor" href="#phylogenomics"></a>
-</h1>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</div></section><section id="aio-annotation_resistance"><p>Content from <a href="annotation_resistance.html">Annotating variants and resistance mutations</a></p>
-<hr>
-<p>Last updated on 2026-06-25 |
-
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/annotation_resistance.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="section level1">
-<h1 id="annotating-variants">Annotating Variants<a class="anchor" aria-label="anchor" href="#annotating-variants"></a>
-</h1>
-</div>
-<div class="section level1">
-<h1 id="resistance-mutations">Resistance mutations<a class="anchor" aria-label="anchor" href="#resistance-mutations"></a>
-</h1>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</div></section><section id="aio-visualizing_results"><p>Content from <a href="visualizing_results.html">Using Markdown</a></p>
-<hr>
-<p>Last updated on 2026-06-25 |
-
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/visualizing_results.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/03-read-mapping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1353,8 +1151,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>How do sequencing reads become a list of genomic differences?</li>
 </ul>
 </div>
 </div>
@@ -1364,9 +1161,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Explain read mapping as alignment of sequencing reads to a reference
+genome.</li>
+<li>Define a SNP and an indel in relation to a reference.</li>
+<li>Recognise the purpose of BAM, BAI, and VCF files.</li>
+<li>Explain why quality filtering matters before interpreting
+variants.</li>
 </ul>
 </div>
 </div>
@@ -1376,117 +1176,20 @@ challenge blocks</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
+<p>Flow 1. Reads are aligned to the reference genome. 2. The workflow
+records those alignments in a BAM file. 3. The variant caller identifies
+positions where the sample differs from the reference. 4. Variants are
+written to a VCF file. 5. The VCF becomes input for annotation,
+resistance screening, or SNP-tree construction.</p>
+</section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
 </h2>
 <hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-<figure><img src="fig/snakemake_logo.png" alt="Snakemake_logo" class="figure mx-auto d-block"><div class="figcaption">Snakemake_logo</div>
-</figure><figure><img src="fig/conda_logo.png" alt="conda_logo" class="figure mx-auto d-block"><div class="figcaption">conda_logo</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<p>Learners inspect, an example VCF. Keep this conceptual: CHROM POS REF
+ALT QUAL FILTER</p>
+<p>Potential questions? - What chromosome or contig is the variant on? -
+What is the reference base? - What is the alternate base? - Did the
+variant pass filtering? - Why might a low-quality variant be
+misleading?</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1495,14 +1198,399 @@ this:</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Mapping is the step that places reads in genomic context.</li>
+<li>Variant calling converts read evidence into candidate differences
+from the reference.</li>
+<li>A VCF is not automatically a list of biologically meaningful
+mutations.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-04-building-snp-trees"><p>Content from <a href="04-building-snp-trees.html">Building and reading SNP trees</a></p>
+<hr>
+<p>Last updated on 2026-07-02 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/04-building-snp-trees.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How does a SNP tree represent relatedness among <em>A. fumigatus
+isolates</em> ?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain that a SNP tree is built from shared genome-wide
+variants.</li>
+<li>Interpret tips, branches, clusters, and branch lengths.</li>
+<li>Distinguish genetic relatedness from transmission direction.</li>
+<li>Identify what epidemiological information is needed alongside the
+tree.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>A SNP tree can show that isolates are closely related or distantly
+related, but it cannot by itself determine who infected whom.</p>
+</section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>Learners view a static tree first, then answer:</li>
+<li>Which isolates are nearest neighbours?</li>
+<li>Which isolate is most distant from the suspected cluster?</li>
+<li>Does the resistant isolate cluster with any susceptible
+isolate?</li>
+<li>What metadata would help interpret this tree: date, environment,
+prior azole exposure, sampling source?</li>
+</ul>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>A SNP tree represents genetic relatedness.</li>
+<li>Branch length reflects genetic difference, not necessarily calendar
+time.</li>
+<li>Epidemiological interpretation requires metadata in addition to the
+tree.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-05-adding-samples"><p>Content from <a href="05-adding-samples.html">Adding a new sample to a workflow</a></p>
+<hr>
+<p>Last updated on 2026-07-02 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/05-adding-samples.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How is a new <em>A. fumigatus</em> isolate added to an existing
+genomic analysis?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Add a new sample to the workflow input table or configuration.</li>
+<li>Run the prepared workflow target or inspect the prepared
+output.</li>
+<li>Compare the “before” and “after” results.</li>
+<li>Decide whether the new isolate changes the interpretation.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+</h2>
+<hr class="half-width"></section><div class="section level1">
+<h1 id="inspect-files">inspect files<a class="anchor" aria-label="anchor" href="#inspect-files"></a>
+</h1>
+<p>ls</p>
+</div>
+<div class="section level1">
+<h1 id="inspect-the-sample-sheet">inspect the sample sheet<a class="anchor" aria-label="anchor" href="#inspect-the-sample-sheet"></a>
+</h1>
+<p>less config/samples.tsv</p>
+</div>
+<div class="section level1">
+<h1 id="run-the-prepared-target">run the prepared target<a class="anchor" aria-label="anchor" href="#run-the-prepared-target"></a>
+</h1>
+<p>snakemake –use-conda –cores 2 [TARGET_NAME] If the actual command is
+not final, leave it as [TARGET_NAME] in the lesson draft. Do not invent
+target names.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Adding a sample should be a controlled change to the sample sheet or
+configuration.</li>
+<li>A reproducible workflow should only rerun the steps affected by the
+new input.</li>
+<li>Interpretation focuses on how the new sample changes the result, not
+on the command itself.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section><section id="aio-06-annotation-resistance"><p>Content from <a href="06-annotation-resistance.html">Annotating variants and resistance mutations</a></p>
+<hr>
+<p>Last updated on 2026-07-02 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/06-annotation-resistance.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do we identify variants that may affect azole resistance in
+<em>A. fumigatus</em>?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain variant annotation as assigning genomic and biological
+context to variants.</li>
+<li>Distinguish synonymous, nonsynonymous, intergenic, and regulatory
+variants.</li>
+<li>Interpret a resistance report for known <em>A. fumigatus</em>
+resistance-associated mutations.</li>
+<li>Explain why genotype-based resistance prediction is not identical to
+phenotypic susceptibility testing.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Use <em>cyp51A</em> as the main example. The commonly discussed
+environmental azole-resistance mechanisms include promoter tandem-repeat
+plus coding-change combinations such as TR34/L98H and TR46/Y121F/T289A.
+These mechanisms are widely reported in azole-resistant <em>A.
+fumigatus</em> and can be found in patients without previous azole
+exposure.</p>
+<p><strong>Databases</strong> Mention MARDy and FungAMR as resources for
+known fungal resistance mechanisms. MARDy is described as a curated
+database of known resistance mechanisms and associated antifungal drugs.
+FungAMR was published in 2025 as a manually curated fungal AMR mutation
+resource covering many drugs, genes, and fungal species.</p>
+</section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+</h2>
+<hr class="half-width">
+<p>Learners compare two isolates: sample_id gene mutation
+predicted_effect evidence AFM_001 cyp51A none detected no known marker
+found - AFM_004 cyp51A TR34/L98H azole resistance marker
+database/literature</p>
+<p>Potential questions: - Which isolate has a known
+resistance-associated mutation? - Is the mutation in a target gene,
+promoter, or elsewhere? - Which antifungal class is relevant? - What
+phenotypic test or clinical information would you still want?</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Annotation adds biological context to variants.</li>
+<li>Known resistance mutations support prediction, not certainty.</li>
+<li>Absence of a known mutation does not prove susceptibility.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-07-visualising-and-interpretation"><p>Content from <a href="07-visualising-and-interpretation.html">Visualising genomic results</a></p>
+<hr>
+<p>Last updated on 2026-07-02 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/07-visualising-and-interpretation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can we visually inspect the evidence behind a genomic
+result?</li>
+<li>How do we interpret the found results?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Open an alignment and variant file in IGV or an equivalent
+viewer.</li>
+<li>Locate a region of interest such as cyp51A.</li>
+<li>Open a Newick tree in a tree viewer.</li>
+<li>Compare visual evidence with tabular workflow outputs.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+</h2>
+<hr class="half-width">
+<p>Practical stations 1. Genome browser view Open BAM, BAI, VCF, and
+reference files. Navigate to the region of interest. 2. Tree view Open
+the Newick tree. Colour or label tips by metadata such as source, date,
+or resistance status. 3. Table view Open the MLSA table, variant
+annotation table, and resistance summary. 4. Cross-output interpretation
+For one isolate, trace the story across all outputs: MLSA placement →
+SNP-tree position → resistance marker → visual evidence.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Visualisation is a quality and interpretation aid, not a replacement
+for the workflow output.</li>
+<li>The same isolate should be traceable across tables, trees, and
+genome-browser views.</li>
+<li>Discrepancies between outputs should trigger review rather than
+automatic acceptance.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-08-online-resources"><p>Content from <a href="08-online-resources.html">Online resources and interpretation</a></p>
+<hr>
+<p>Last updated on 2026-07-02 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/08-online-resources.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Which public resources can help interpret <em>A. fumigatus</em>
+genomic results?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Identify databases relevant to genome sequences, gene function,
+typing, and resistance.</li>
+<li>Recognise which question each resource can and cannot answer.</li>
+<li>Use online resources to support, not replace, workflow-based
+interpretation.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+</h2>
+<hr class="half-width">
+<p>Resource Use NCBI / GenBank Reference genomes, assemblies, sequence
+records. FungiDB Fungus-specific genome resource, includes tools and a
+Galaxy-based workspace for analyses such as variant calling. PubMLST
+MLST/typing context for <em>A. fumigatus</em>, with the
+discriminatory-power caveat. MARDy Known fungal resistance mechanisms
+and antifungal drug associations. FungAMR Curated fungal AMR mutation
+data, useful for looking up reported gene–drug–mutation associations.
+EUCAST / CLSI Phenotypic antifungal susceptibility interpretation and
+breakpoints.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Different databases answer different questions.</li>
+<li>Resistance interpretation should be evidence-based and
+database-supported.</li>
+<li>Online lookups should be documented so interpretations remain
+reproducible.</li>
 </ul>
 </div>
 </div>
@@ -1555,14 +1643,14 @@ any links that you are not going to use.
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "snakemake, workflow, bioinformatics, medical mycology, MLSA, phylogenomics, variant calling",
   "name": "All in One View",
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/aio.html",
   "dateCreated": "2026-06-25",
-  "dateModified": "2026-07-01",
-  "datePublished": "2026-07-01"
+  "dateModified": "2026-07-02",
+  "datePublished": "2026-07-02"
 }
 
   </script><script>

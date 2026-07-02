@@ -4,6 +4,30 @@
     <loc>https://carpentries.github.io/workbench-template-md/01-introduction.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/01-workflows-snakemake.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/02-mlsa-for-aspergillus.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/03-read-mapping.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/04-building-snp-trees.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/05-adding-samples.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/06-annotation-resistance.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/07-visualising-and-interpretation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/08-online-resources.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -35,6 +59,30 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/01-workflows-snakemake.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/02-mlsa-for-aspergillus.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/03-read-mapping.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/04-building-snp-trees.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/05-adding-samples.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/06-annotation-resistance.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/07-visualising-and-interpretation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/08-online-resources.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>

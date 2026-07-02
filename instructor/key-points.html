@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Genomics course: Key Points</title>
+<title>Snakemake workshop for medical mycology: Key Points</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -40,7 +40,7 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="This workshop is to teach the basics of genomics" src="../assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
+        <img id="incubator-logo" alt="Snakemake workshop for medical mycology" src="../assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
               <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
@@ -96,10 +96,10 @@
       <span class="menu-title">Menu</span>
     </button>
     <div class="nav-logo">
-      <img class="small-logo" alt="This workshop is to teach the basics of genomics" src="../assets/images/incubator-logo-sm.svg">
+      <img class="small-logo" alt="Snakemake workshop for medical mycology" src="../assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Genomics course
+      Snakemake workshop for medical mycology
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +110,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Genomics course
+            Snakemake workshop for medical mycology
           </span>
         </li>
         <li class="nav-item">
@@ -237,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-workflows-snakemake.html">1. Reproducible workflows with Snakemake</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -249,7 +249,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="genomes_mlsa.html">2. Genomes and MLSA</a>
+        <a href="02-mlsa-for-aspergillus.html">2. MLSA for Aspergillus fumigatus Genomes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -261,7 +261,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="mlsa-for-aspergillus.html">3. MLSA for Aspergillus fumigatus Genomes</a>
+        <a href="03-read-mapping.html">3. Read mapping and variant calling</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -273,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="variant_calling.html">4. Read mapping to reference genome, variant calling and phylogenomics</a>
+        <a href="04-building-snp-trees.html">4. Building and reading SNP trees</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -285,7 +285,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="annotation_resistance.html">5. Annotating variants and resistance mutations</a>
+        <a href="05-adding-samples.html">5. Adding a new sample to a workflow</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -297,7 +297,31 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="visualizing_results.html">6. Using Markdown</a>
+        <a href="06-annotation-resistance.html">6. Annotating variants and resistance mutations</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-visualising-and-interpretation.html">7. Visualising genomic results</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-online-resources.html">8. Online resources and interpretation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -361,44 +385,73 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Key Points</h1>
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-workflows-snakemake"><h2 class="section-heading"><a href="01-workflows-snakemake.html">Reproducible workflows with SnakemakeCould use/implement parts of the bioinformatics Snakemake
+presentation!<a class="anchor" aria-label="anchor" href="#could-useimplement-parts-of-the-bioinformatics-snakemake-presentation"></a></a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul></section><section id="genomes_mlsa"><h2 class="section-heading"><a href="genomes_mlsa.html">Genomes and MLSAGenomes<a class="anchor" aria-label="anchor" href="#genomes"></a>MLSA<a class="anchor" aria-label="anchor" href="#mlsa"></a></a></h2>
-<hr class="half-width"></section><section id="mlsa-for-aspergillus"><h2 class="section-heading"><a href="mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></h2>
+<li>A workflow formalises an analysis so the same steps are applied
+consistently.</li>
+<li>Configuration files and sample sheets separate user choices from
+workflow code.</li>
+</ul></section><section id="02-mlsa-for-aspergillus"><h2 class="section-heading"><a href="02-mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></h2>
 <hr class="half-width">
 <ul>
 <li>MLSA compares selected loci rather than whole genomes.</li>
 <li>The configured locus names must match the reference gene FASTA
 headers exactly.</li>
 <li>Gene QC should be inspected before interpreting the MLSA tree.</li>
-<li>The final MLSA tree is written to
-<code>results/phylogenetics/MLSA.nwk</code>.</li>
 <li>MLSA can suggest broad relatedness but cannot by itself establish
 transmission.</li>
 <li>Whole-genome SNP analysis provides higher resolution for closely
 related <em>A. fumigatus</em> isolates.</li>
-</ul></section><section id="variant_calling"><h2 class="section-heading"><a href="variant_calling.html">Read mapping to reference genome, variant calling and phylogenomicsRead mapping to reference genome,<a class="anchor" aria-label="anchor" href="#read-mapping-to-reference-genome"></a>Variant calling and<a class="anchor" aria-label="anchor" href="#variant-calling-and"></a>Phylogenomics<a class="anchor" aria-label="anchor" href="#phylogenomics"></a></a></h2>
-<hr class="half-width"></section><section id="annotation_resistance"><h2 class="section-heading"><a href="annotation_resistance.html">Annotating variants and resistance mutationsAnnotating Variants<a class="anchor" aria-label="anchor" href="#annotating-variants"></a>Resistance mutations<a class="anchor" aria-label="anchor" href="#resistance-mutations"></a></a></h2>
-<hr class="half-width"></section><section id="visualizing_results"><h2 class="section-heading"><a href="visualizing_results.html">Using Markdown</a></h2>
+</ul></section><section id="03-read-mapping"><h2 class="section-heading"><a href="03-read-mapping.html">Read mapping and variant calling</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Mapping is the step that places reads in genomic context.</li>
+<li>Variant calling converts read evidence into candidate differences
+from the reference.</li>
+<li>A VCF is not automatically a list of biologically meaningful
+mutations.</li>
+</ul></section><section id="04-building-snp-trees"><h2 class="section-heading"><a href="04-building-snp-trees.html">Building and reading SNP trees</a></h2>
+<hr class="half-width">
+<ul>
+<li>A SNP tree represents genetic relatedness.</li>
+<li>Branch length reflects genetic difference, not necessarily calendar
+time.</li>
+<li>Epidemiological interpretation requires metadata in addition to the
+tree.</li>
+</ul></section><section id="05-adding-samples"><h2 class="section-heading"><a href="05-adding-samples.html">Adding a new sample to a workflowinspect files<a class="anchor" aria-label="anchor" href="#inspect-files"></a>inspect the sample sheet<a class="anchor" aria-label="anchor" href="#inspect-the-sample-sheet"></a>run the prepared target<a class="anchor" aria-label="anchor" href="#run-the-prepared-target"></a></a></h2>
+<hr class="half-width">
+<ul>
+<li>Adding a sample should be a controlled change to the sample sheet or
+configuration.</li>
+<li>A reproducible workflow should only rerun the steps affected by the
+new input.</li>
+<li>Interpretation focuses on how the new sample changes the result, not
+on the command itself.</li>
+</ul></section><section id="06-annotation-resistance"><h2 class="section-heading"><a href="06-annotation-resistance.html">Annotating variants and resistance mutations</a></h2>
+<hr class="half-width">
+<ul>
+<li>Annotation adds biological context to variants.</li>
+<li>Known resistance mutations support prediction, not certainty.</li>
+<li>Absence of a known mutation does not prove susceptibility.</li>
+</ul></section><section id="07-visualising-and-interpretation"><h2 class="section-heading"><a href="07-visualising-and-interpretation.html">Visualising genomic results</a></h2>
+<hr class="half-width">
+<ul>
+<li>Visualisation is a quality and interpretation aid, not a replacement
+for the workflow output.</li>
+<li>The same isolate should be traceable across tables, trees, and
+genome-browser views.</li>
+<li>Discrepancies between outputs should trigger review rather than
+automatic acceptance.</li>
+</ul></section><section id="08-online-resources"><h2 class="section-heading"><a href="08-online-resources.html">Online resources and interpretation</a></h2>
+<hr class="half-width">
+<ul>
+<li>Different databases answer different questions.</li>
+<li>Resistance interpretation should be evidence-based and
+database-supported.</li>
+<li>Online lookups should be documented so interpretations remain
+reproducible.</li>
 </ul></section>
 </div>
     </main>
@@ -443,14 +496,14 @@ locally</li>
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "snakemake, workflow, bioinformatics, medical mycology, MLSA, phylogenomics, variant calling",
   "name": "Key Points",
   "creativeWorkStatus": "active",
   "url": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/instructor/key-points.html",
   "dateCreated": "2026-06-25",
-  "dateModified": "2026-07-01",
-  "datePublished": "2026-07-01"
+  "dateModified": "2026-07-02",
+  "datePublished": "2026-07-02"
 }
 
   </script><script>
