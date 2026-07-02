@@ -441,15 +441,16 @@ in the same order, on any new sample, with the same parameters. You have
 already run each of these steps by hand, one command at a time, in
 earlier sessions with FastQC, fastp, SPAdes, and QUAST. This episode
 looks at what changes when those same four tools are wired together as a
-<a href="https://snakemake.readthedocs.io/" class="external-link"><strong>Snakemake</strong>
-workflow</a> instead.</p>
+<a href="https://snakemake.readthedocs.io/" class="external-link"><strong>Snakemake
+workflow</strong></a> instead.</p>
 <p>We will not run anything in this episode. The goal is to become
 comfortable reading a Snakemake workflow: recognising its folder
 structure, following how one rule’s output becomes another rule’s input,
 and knowing where to look for samples, parameters, results, and logs.
 The next episode uses a real, production workflow built the same
 way.</p>
-</section><section><h2 class="section-heading" id="the-same-pipeline-twice">The same pipeline, twice<a class="anchor" aria-label="anchor" href="#the-same-pipeline-twice"></a>
+<figure><img src="../fig/snakemake_logo.png" alt="snakemake_logo" class="figure mx-auto d-block"><div class="figcaption">snakemake_logo</div>
+</figure></section><section><h2 class="section-heading" id="the-same-pipeline-twice">The same pipeline, twice<a class="anchor" aria-label="anchor" href="#the-same-pipeline-twice"></a>
 </h2>
 <hr class="half-width">
 <p>Here is a naive bash version of the pipeline you already know,
