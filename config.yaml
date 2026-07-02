@@ -17,13 +17,13 @@ carpentry: 'incubator'
 # carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'Genomics course'
+title: 'Snakemake workshop for medical mycology'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2026-06-25'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries'
+keywords: 'snakemake, workflow, bioinformatics, medical mycology, MLSA, phylogenomics, variant calling'
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
@@ -66,12 +66,14 @@ contact: 'team@carpentries.org'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
-- genomes_mlsa.md
-- mlsa-for-aspergillus.md
-- variant_calling.md
-- annotation_resistance.md
-- visualizing_results.md
+- 01-workflows-snakemake.md
+- 02-mlsa-for-aspergillus.md
+- 03-read-mapping.md
+- 04-building-snp-trees.md
+- 05-adding-samples.md
+- 06-annotation-resistance.md
+- 07-visualising-and-interpretation.md
+- 08-online-resources.md
 
 # Information for Learners
 learners: 
@@ -87,4 +89,4 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-carpentry_description: This workshop is to teach the basics of genomics
+carpentry_description: 'Snakemake workshop for medical mycology'
