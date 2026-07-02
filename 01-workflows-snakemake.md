@@ -30,13 +30,15 @@ and plotting, wired together so that they always run in the same order, on any
 new sample, with the same parameters. You have already run each of these
 steps by hand, one command at a time, in earlier sessions with FastQC, fastp,
 SPAdes, and QUAST. This episode looks at what changes when those same four
-tools are wired together as a [**Snakemake** workflow](https://snakemake.readthedocs.io/) instead.
+tools are wired together as a [**Snakemake workflow**](https://snakemake.readthedocs.io/) instead.
 
 We will not run anything in this episode. The goal is to become comfortable
 reading a Snakemake workflow: recognising its folder structure, following how
 one rule's output becomes another rule's input, and knowing where to look for
 samples, parameters, results, and logs. The next episode uses a real,
 production workflow built the same way.
+
+![snakemake_logo](fig/snakemake_logo.png)
 
 ## The same pipeline, twice
 
