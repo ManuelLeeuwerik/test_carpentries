@@ -1,0 +1,6 @@
+name: trimming
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
