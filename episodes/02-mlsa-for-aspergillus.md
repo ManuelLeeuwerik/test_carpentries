@@ -44,7 +44,7 @@ In this session we will use the following tool we developed:
 
 **[snakemake-mlsa-ani](https://github.com/westerdijk-wm/snakemake-mlsa-ani/)**
 
-![overview_snakemake-mlsa-ani](files/snakemake-mlsa-ani-overview.pdf)
+![overview_snakemake-mlsa-ani](fig/snakemake-mlsa-ani-overview.png)
 
 ::::::::::::::::::::::::::::::::::::: callout
 
