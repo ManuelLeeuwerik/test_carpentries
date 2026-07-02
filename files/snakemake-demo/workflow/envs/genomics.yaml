@@ -1,0 +1,6 @@
+name: genomics
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - spades

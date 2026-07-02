@@ -399,10 +399,12 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is Snakemake?</li>
-<li>What are the advantages of Snakemake?</li>
+<li>What is Snakemake, and what problem does it solve?</li>
 <li>What does a Snakemake workflow do that a series of individual
 commands does not?</li>
+<li>What are the roles of a configuration file, rules, inputs, outputs,
+and logs?</li>
+<li>How do you read a Snakemake workflow without needing to run it?</li>
 </ul>
 </div>
 </div>
@@ -413,10 +415,14 @@ commands does not?</li>
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Explain the purpose of a reproducible workflow.</li>
+<li>Compare a naive bash pipeline with the same pipeline written in
+Snakemake.</li>
 <li>Identify the role of a configuration file, rules, inputs, outputs,
 and logs.</li>
-<li>Run or inspect a prepared Snakemake workflow without needing to
-understand every rule.</li>
+<li>Recognise the standard folder structure of a Snakemake
+workflow.</li>
+<li>Read a prepared Snakemake workflow and predict what it will do,
+without running it.</li>
 </ul>
 </div>
 </div>
@@ -426,20 +432,402 @@ understand every rule.</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>A “workflow”/“pipeline” is just individual steps (QC → trim →
-assemble) wired together so they always run in the same order on any new
-sample. Explain what a “workflow” is</p>
-</section><div class="section level1">
-<h1 id="could-useimplement-parts-of-the-bioinformatics-snakemake-presentation">Could use/implement parts of the bioinformatics Snakemake
-presentation!<a class="anchor" aria-label="anchor" href="#could-useimplement-parts-of-the-bioinformatics-snakemake-presentation"></a>
-</h1>
-<div class="section level2">
-<h2 id="practical">Practical<a class="anchor" aria-label="anchor" href="#practical"></a>
+<p>A workflow, or pipeline, is a set of individual steps like: QC,
+trimming, assembly, and plotting, wired together so that they always run
+in the same order, on any new sample, with the same parameters. You have
+already run each of these steps by hand, one command at a time, in
+earlier sessions with FastQC, fastp, SPAdes, and QUAST. This episode
+looks at what changes when those same four tools are wired together as a
+<a href="https://snakemake.readthedocs.io/" class="external-link"><strong>Snakemake</strong>
+workflow</a> instead.</p>
+<p>We will not run anything in this episode. The goal is to become
+comfortable reading a Snakemake workflow: recognising its folder
+structure, following how one rule’s output becomes another rule’s input,
+and knowing where to look for samples, parameters, results, and logs.
+The next episode uses a real, production workflow built the same
+way.</p>
+</section><section><h2 class="section-heading" id="the-same-pipeline-twice">The same pipeline, twice<a class="anchor" aria-label="anchor" href="#the-same-pipeline-twice"></a>
 </h2>
-<p>Learners inspect the prepared workflow folder: config/ data/
-resources/ results/ workflow/ logs/</p>
-<p>They then identify: - Where samples are listed - Where reference
-files are defined - Where outputs appear - Where logs are stored</p>
+<hr class="half-width">
+<p>Here is a naive bash version of the pipeline you already know,
+running FastQC, fastp, SPAdes, and QUAST for two samples:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="cf">for</span> sample <span class="kw">in</span> sample1 sample2<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a>    <span class="ex">fastp</span> <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a>        <span class="at">-i</span> resources/reads/<span class="va">${sample}</span>_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a>        <span class="at">-I</span> resources/reads/<span class="va">${sample}</span>_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a>        <span class="at">-o</span> results/trimmed/<span class="va">${sample}</span>_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a>        <span class="at">-O</span> results/trimmed/<span class="va">${sample}</span>_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a>        <span class="at">--adapter_sequence</span> AGATCGGAAGAGC</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a>    <span class="ex">fastqc</span> <span class="dt">\</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a>        results/trimmed/<span class="va">${sample}</span>_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a>        results/trimmed/<span class="va">${sample}</span>_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a>        <span class="at">-o</span> results/qc_reports/</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a>    <span class="ex">spades.py</span> <span class="dt">\</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a>        <span class="at">-1</span> results/trimmed/<span class="va">${sample}</span>_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a>        <span class="at">-2</span> results/trimmed/<span class="va">${sample}</span>_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1" aria-label="code-block-1-18"></a>        <span class="at">-t</span> 8 <span class="at">-k</span> 21,33,55,77,99,121 <span class="dt">\</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1" aria-label="code-block-1-19"></a>        <span class="at">-o</span> results/assembly/<span class="va">${sample}</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1" aria-label="code-block-1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1" aria-label="code-block-1-21"></a>    <span class="ex">quast.py</span> <span class="dt">\</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1" aria-label="code-block-1-22"></a>        results/assembly/<span class="va">${sample}</span>/contigs.fasta <span class="dt">\</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1" aria-label="code-block-1-23"></a>        <span class="at">-o</span> results/quast/<span class="va">${sample}</span> <span class="dt">\</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1" aria-label="code-block-1-24"></a>        <span class="at">--fungus</span> <span class="at">--min-contig</span> 500 <span class="at">--min-identity</span> 95.0 <span class="dt">\</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1" aria-label="code-block-1-25"></a>        <span class="at">--threads</span> 4</span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1" aria-label="code-block-1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1" aria-label="code-block-1-27"></a><span class="cf">done</span></span></code></pre>
+</div>
+<p>This works, but it has a few problems that get worse as a project
+grows:</p>
+<ul>
+<li>Every path is spelled out again for every tool, for every
+sample.</li>
+<li>If <code>sample1</code> already finished and only
+<code>sample2</code> changed, the script has no way of knowing that, it
+reruns everything, every time.</li>
+<li>Adding a third sample means editing the loop, or the whole
+file.</li>
+<li>There is no record of which exact command and parameters produced a
+given output file, beyond scrolling back through the terminal.</li>
+<li>Does not run jobs in parallel.</li>
+</ul>
+<p>Here is the same pipeline as a Snakemake rule, taken from this
+episode’s demo workflow:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a>rule fastp_trim:</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a>    <span class="bu">input</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a>        forward<span class="op">=</span><span class="kw">lambda</span> wildcards: config[<span class="st">"samples"</span>][wildcards.sample][<span class="dv">0</span>],</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a>        rev<span class="op">=</span><span class="kw">lambda</span> wildcards: config[<span class="st">"samples"</span>][wildcards.sample][<span class="dv">1</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>    output:</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>        forward_trimmed<span class="op">=</span>temp(<span class="st">"results/trimmed/</span><span class="sc">{sample}</span><span class="st">_R1.fastq.gz"</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a>        rev_trimmed<span class="op">=</span>temp(<span class="st">"results/trimmed/</span><span class="sc">{sample}</span><span class="st">_R2.fastq.gz"</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a>    params:</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a>        adapter<span class="op">=</span>config[<span class="st">"adapter_sequence"</span>],</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a>    log:</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a>        <span class="co">"logs/fastp/{sample}.log"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a>    conda:</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a>        <span class="co">"envs/trimming.yaml"</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a>    threads: <span class="dv">4</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a>    shell:</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a>        <span class="co">"""</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a><span class="co">        fastp -i {input.forward} -I {input.rev} </span><span class="op">\</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a><span class="co">            -o {output.forward_trimmed} -O {output.rev_trimmed} </span><span class="op">\</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a><span class="co">            --adapter_sequence {params.adapter} </span><span class="op">\</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a><span class="co">            --thread {threads} </span><span class="op">\</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a><span class="co">            2&gt; {log}</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1" aria-label="code-block-2-22"></a><span class="co">        """</span></span></code></pre>
+</div>
+<p>The <code>{sample}</code> in the input and output paths is a
+<strong>wildcard</strong>. Snakemake fills it in for every sample it
+needs to produce, so this one rule replaces one iteration of the bash
+loop above, for as many samples as the configuration lists, without
+editing the rule itself.</p>
+<div id="what-snakemake-adds" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="what-snakemake-adds" class="callout-inner">
+<h3 class="callout-title">What Snakemake adds</h3>
+<div class="callout-content">
+<ul>
+<li>
+<strong>Dependency tracking</strong>: Snakemake only reruns a step
+if its inputs, its parameters, or the rule itself have changed since the
+last run.</li>
+<li>
+<strong>One place per concern</strong>: sample names and parameters
+live in a configuration file, not scattered through shell commands.</li>
+<li>
+<strong>Isolated software environments</strong>: each rule can
+declare exactly which Conda environment it needs. Snakemake tracks
+changes to environments and downloads it automatically if not already
+installed.</li>
+<li>
+<strong>A log per job</strong>: every rule writes to its own log
+file, instead of everything landing in one terminal scrollback.</li>
+<li>
+<strong>A single command to describe or run the whole
+pipeline</strong>, for one sample or for a hundred.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="anatomy-of-a-snakemake-workflow">Anatomy of a Snakemake workflow<a class="anchor" aria-label="anchor" href="#anatomy-of-a-snakemake-workflow"></a>
+</h2>
+<hr class="half-width">
+<p>Snakemake workflows tend to follow a standard folder structure:</p>
+<pre class="text"><code>├── .gitignore
+├── README.md
+├── LICENSE.md
+├── workflow
+│   ├── rules
+│   │   ├── trimming.smk
+│   │   ├── qc.smk
+│   │   ├── assembly.smk
+│   │   └── quast.smk
+│   ├── envs
+│   │   ├── trimming.yaml
+│   │   ├── fastqc.yaml
+│   │   ├── genomics.yaml
+│   │   └── quast.yaml
+│   ├── scripts
+│   │   └── summarize_quast.py
+│   └── Snakefile
+├── config
+│   └── config.yaml
+├── results
+└── resources</code></pre>
+<ul>
+<li>
+<strong><code>workflow/Snakefile</code></strong> is the entry point.
+It loads the configuration file, works out the sample names, includes
+the rule modules, and defines the final targets in a rule usually called
+<code>all</code>.</li>
+<li>
+<strong><code>workflow/rules/*.smk</code></strong> each hold one or
+a few related rules, so a large workflow does not become one very long
+file. The snakefile imports the rule file with
+<code>include: "rules/quast.smk"</code>.</li>
+<li>
+<strong><code>workflow/envs/*.yaml</code></strong> are Conda
+environment files, one per rule (or per tool). Snakemake creates and
+activates the right one automatically when a rule runs with
+<code>--use-conda</code>.</li>
+<li>
+<strong><code>workflow/scripts/</code></strong> holds helper
+scripts, called from a rule with a <code>script:</code> directive
+instead of <code>shell:</code>, for logic that is easier to write in
+Python or R than in a shell command.</li>
+<li>
+<strong><code>config/config.yaml</code></strong> lists the samples
+and the tool parameters. This is the only file you usually need to edit
+to run the workflow on new data.</li>
+<li>
+<strong><code>results/</code></strong> and
+<strong><code>logs/</code></strong> are created by the workflow itself
+and are not committed to version control.</li>
+</ul>
+<p>This is the basic structure. Larger workflows add more execution
+profiles, notebooks and report templates but everything you need to read
+a workflow is already here.</p>
+</section><section><h2 class="section-heading" id="reading-a-rule">Reading a rule<a class="anchor" aria-label="anchor" href="#reading-a-rule"></a>
+</h2>
+<hr class="half-width">
+<p>Every rule follows the same pattern: <strong>input -&gt; process
+-&gt; output</strong>, plus a few optional (but recommended) pieces to
+help with logging, environments, and resources.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a>rule fastqc:</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a>    <span class="bu">input</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>        forward<span class="op">=</span><span class="st">"results/trimmed/</span><span class="sc">{sample}</span><span class="st">_R1.fastq.gz"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>        rev<span class="op">=</span><span class="st">"results/trimmed/</span><span class="sc">{sample}</span><span class="st">_R2.fastq.gz"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    output:</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>        <span class="co">"results/qc_reports/{sample}_R1_fastqc.html"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>        <span class="co">"results/qc_reports/{sample}_R2_fastqc.html"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    log:</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>        <span class="co">"logs/fastqc/{sample}.log"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>    conda:</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>        <span class="co">"envs/fastqc.yaml"</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>    threads: <span class="dv">2</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>    shell:</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>        <span class="co">"""</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a><span class="co">        fastqc {input.forward} {input.rev} -o results/qc_reports/ -t {threads} 2&gt; {log}</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1" aria-label="code-block-4-16"></a><span class="co">        """</span></span></code></pre>
+</div>
+<p>A few things worth noticing:</p>
+<ul>
+<li>
+<strong><code>input</code></strong> names the files the rule needs.
+Snakemake automatically works out that these files are produced by
+<code>rule fastp_trim</code>, and runs that rule first if its outputs do
+not exist yet.</li>
+<li>
+<strong><code>output</code></strong> names the files the rule
+creates. If they already exist and are newer than the inputs, Snakemake
+skips the rule.</li>
+<li>
+<strong><code>log</code></strong> is a dedicated file for that job’s
+messages, separate from every other sample and every other rule.</li>
+<li>
+<strong><code>conda</code></strong> points to an environment file,
+so <code>fastqc</code> does not need to be installed system-wide only
+listed in <code>envs/fastqc.yaml</code>.</li>
+<li>
+<strong><code>threads</code></strong> tells Snakemake how many CPU
+threads this job may use, which it uses together with
+<code>--cores</code> to decide how many jobs can run at once.</li>
+</ul>
+<div id="temporary-files" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="temporary-files" class="callout-inner">
+<h3 class="callout-title">Temporary files</h3>
+<div class="callout-content">
+<p>The trimmed FASTQ files produced by <code>fastp_trim</code> are
+wrapped in <code>temp(...)</code>:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>output:</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>    forward_trimmed<span class="op">=</span>temp(<span class="st">"results/trimmed/</span><span class="sc">{sample}</span><span class="st">_R1.fastq.gz"</span>),</span></code></pre>
+</div>
+<p>This tells Snakemake that once every rule that needs a file has used
+it, the file can be deleted automatically. It keeps large intermediate
+files, like trimmed reads, from filling up disk space once the assembly
+step that needs them has finished.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="from-per-sample-rules-to-one-target">From per-sample rules to one target<a class="anchor" aria-label="anchor" href="#from-per-sample-rules-to-one-target"></a>
+</h2>
+<hr class="half-width">
+<p>The <code>rule all</code> at the top of the Snakefile lists every
+final file the workflow should produce, generated for every sample with
+<code>expand</code>:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a>    <span class="bu">input</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a>        expand(<span class="st">"results/qc_reports/</span><span class="sc">{sample}</span><span class="st">_R1_fastqc.html"</span>, sample<span class="op">=</span>SAMPLES),</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a>        expand(<span class="st">"results/qc_reports/</span><span class="sc">{sample}</span><span class="st">_R2_fastqc.html"</span>, sample<span class="op">=</span>SAMPLES),</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a>        expand(<span class="st">"results/quast/</span><span class="sc">{sample}</span><span class="st">/report.pdf"</span>, sample<span class="op">=</span>SAMPLES),</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a>        <span class="co">"results/quast/summary.tsv"</span>,</span></code></pre>
+</div>
+<p><code>expand(...)</code> fills the <code>{sample}</code> wildcard
+with every entry in <code>SAMPLES</code>, so this one line stands in for
+one filename per sample. <code>SAMPLES</code> itself is read from the
+configuration file:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a>configfile: <span class="st">"config/config.yaml"</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a>SAMPLES <span class="op">=</span> <span class="bu">list</span>(config[<span class="st">"samples"</span>].keys())</span></code></pre>
+</div>
+<p>Add a third sample to <code>config/config.yaml</code> and every rule,
+and <code>rule all</code>, apply to it automatically, nothing in
+<code>workflow/</code> needs to change.</p>
+</section><section><h2 class="section-heading" id="from-rules-to-a-script">From rules to a script<a class="anchor" aria-label="anchor" href="#from-rules-to-a-script"></a>
+</h2>
+<hr class="half-width">
+<p>Not every step fits comfortably in a single shell command. The final
+rule in this workflow collects every sample’s QUAST report into one
+summary table, using a Python script instead of <code>shell:</code>:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a>rule summarize_quast:</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a>    <span class="bu">input</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>        expand(<span class="st">"results/quast/</span><span class="sc">{sample}</span><span class="st">/report.tsv"</span>, sample<span class="op">=</span>SAMPLES),</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a>    output:</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1" aria-label="code-block-8-5"></a>        <span class="co">"results/quast/summary.tsv"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1" aria-label="code-block-8-6"></a>    log:</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1" aria-label="code-block-8-7"></a>        <span class="co">"logs/quast/summarize.log"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1" aria-label="code-block-8-8"></a>    conda:</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1" aria-label="code-block-8-9"></a>        <span class="co">"envs/quast.yaml"</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1" aria-label="code-block-8-10"></a>    script:</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1" aria-label="code-block-8-11"></a>        <span class="co">"../scripts/summarize_quast.py"</span></span></code></pre>
+</div>
+<p>Snakemake makes a <code>snakemake</code> object available inside
+<code>summarize_quast.py</code>, with <code>.input</code>,
+<code>.output</code>, and <code>.log</code> already filled in from the
+rule, so the script does not need any argument parsing of its own.</p>
+</section><section><h2 class="section-heading" id="inspecting-the-workflow-without-running-it">Inspecting the workflow without running it<a class="anchor" aria-label="anchor" href="#inspecting-the-workflow-without-running-it"></a>
+</h2>
+<hr class="half-width">
+<p>It is common to start with a <strong>dry run</strong>: asking
+Snakemake what it would do, without executing anything.</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="ex">snakemake</span> <span class="at">--snakefile</span> workflow/Snakefile <span class="at">--cores</span> 10 <span class="at">--use-conda</span> <span class="at">-n</span></span></code></pre>
+</div>
+<p>A dry run prints the full list of jobs Snakemake would run, in
+dependency order, along with the reason each job is needed, missing
+output, or an input file that is newer than its output. This is exactly
+how we inspected this episode’s demo workflow while preparing it, and it
+is good practice before running any workflow on new data, even once you
+trust it.</p>
+<div id="challenge-1-read-the-workflow" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-read-the-workflow" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Read the workflow</h3>
+<div class="callout-content">
+<p>Without running anything, open <code>config/config.yaml</code> and
+the files under <code>workflow/rules/</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Where are the samples for this workflow listed?</li>
+<li>Which rule produces the input files that
+<code>rule spades_assembly</code> needs?</li>
+<li>Where would you look for the fastp log for
+<code>sample2</code>?</li>
+<li>If you added a <code>sample3</code> entry to
+<code>config/config.yaml</code>, which files listed in
+<code>rule all</code> would Snakemake need to create for it?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Expected reasoning
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>Samples are listed under <code>samples:</code> in
+<code>config/config.yaml</code>, as a sample name mapped to a pair of
+FASTQ paths.</li>
+<li>
+<code>rule fastp_trim</code>, in
+<code>workflow/rules/trimming.smk</code>, produces the trimmed FASTQ
+files that <code>rule spades_assembly</code> takes as input.</li>
+<li>At <code>logs/fastp/sample2.log</code>, matching the
+<code>log:</code> path declared in <code>rule fastp_trim</code> with
+<code>{sample}</code> filled in as <code>sample2</code>.</li>
+<li>All of them, for <code>sample3</code>:
+<code>results/qc_reports/sample3_R1_fastqc.html</code>,
+<code>results/qc_reports/sample3_R2_fastqc.html</code>, and
+<code>results/quast/sample3/report.pdf</code>, plus an updated
+<code>results/quast/summary.tsv</code>. <code>rule all</code> uses
+<code>expand(..., sample=SAMPLES)</code>, and <code>SAMPLES</code> is
+read directly from the configuration file, so a new sample is picked up
+automatically.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="coming-up-next">Coming up next<a class="anchor" aria-label="anchor" href="#coming-up-next"></a>
+</h2>
+<hr class="half-width">
+<p>The next episode moves from this small demonstration to a real,
+actively used workflow: <strong>snakemake-mlsa-ani</strong>, for
+multilocus sequence analysis and average nucleotide identity estimation
+from fungal genome assemblies. It follows exactly the structure
+introduced here a <code>Snakefile</code>, rule modules, Conda
+environments, and a <code>config/config.yaml</code> and you will use
+what you practised in this episode to read it, inspect its outputs, and
+interpret its results.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -449,9 +837,19 @@ files are defined - Where outputs appear - Where logs are stored</p>
 <div class="callout-content">
 <ul>
 <li>A workflow formalises an analysis so the same steps are applied
-consistently.</li>
+consistently to every sample.</li>
 <li>Configuration files and sample sheets separate user choices from
 workflow code.</li>
+<li>Each rule declares its inputs, outputs, log file, software
+environment, and thread count; Snakemake works out execution order from
+how these connect.</li>
+<li>Wildcards and <code>expand()</code> let one rule apply to every
+sample, without repeating code.</li>
+<li>
+<code>temp()</code> marks intermediate files for automatic cleanup
+once they are no longer needed.</li>
+<li>A dry run (<code>-n</code>) shows what a workflow would do without
+running anything.</li>
 </ul>
 </div>
 </div>
@@ -460,8 +858,7 @@ workflow code.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-</div></section><section id="aio-02-mlsa-for-aspergillus"><p>Content from <a href="02-mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></p>
+</section></section><section id="aio-02-mlsa-for-aspergillus"><p>Content from <a href="02-mlsa-for-aspergillus.html">MLSA for Aspergillus fumigatus Genomes</a></p>
 <hr>
 <p>Last updated on 2026-07-02 |
 
