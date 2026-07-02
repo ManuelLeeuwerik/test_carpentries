@@ -44,6 +44,8 @@ In this session we will use the following tool we developed:
 
 **[snakemake-mlsa-ani](https://github.com/westerdijk-wm/snakemake-mlsa-ani/)**
 
+![overview_snakemake-mlsa-ani](files/snakemake-mlsa-ani-overview.pdf)
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ## MLSA and MLST are related but not identical
@@ -51,7 +53,7 @@ In this session we will use the following tool we developed:
 **MLSA** means multilocus sequence analysis: comparison of several loci, often for phylogenetic placement.
 
 **MLST** means multilocus sequence typing: assignment of allele profiles or sequence
-types using a formal typing scheme. MLST is for example used for *Cryptococcus neofrmans* and *C. gattii* typing [(ref)][https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/]. 
+types using a formal typing scheme. MLST is for example used for *Cryptococcus neofrmans* and *C. gattii* typing [(ref)](https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/). 
 
 This episode uses the term **MLSA** because the workflow extracts selected loci,
 aligns them, concatenates them, and builds a phylogenetic tree. If a different
