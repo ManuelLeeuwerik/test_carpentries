@@ -1,0 +1,24 @@
+# ------------------------------------------------------------------
+# Configuration for the Snakemake showcase workflow
+# (fastp -> FastQC -> SPAdes -> QUAST)
+# ------------------------------------------------------------------
+
+# Sample sheet: sample name -> [R1, R2]
+# Add or remove samples here only -- nothing in the Snakefile needs to change.
+samples:
+  sample1:
+    - resources/reads/sample1_1.fastq.gz
+    - resources/reads/sample1_2.fastq.gz
+  sample2:
+    - resources/reads/sample2_R1.fastq.gz
+    - resources/reads/sample2_R2.fastq.gz
+
+# fastp trimming settings
+adapter_sequence: AGATCGGAAGAGC
+
+# SPAdes assembly settings
+spades_kmers: "21,33,55,77,99,121"
+
+# QUAST settings
+quast_min_contig: 500
+quast_min_identity: 95.0
