@@ -414,6 +414,9 @@ between very similar <em>A. fumigatus</em> isolates, whole-genome SNP
 analysis is more informative.</p>
 <p>In this session we will use the following tool we developed:</p>
 <p><strong><a href="https://github.com/westerdijk-wm/snakemake-mlsa-ani/" class="external-link">snakemake-mlsa-ani</a></strong></p>
+<div class="float">
+<embed src="files/snakemake-mlsa-ani-overview.pdf"></embed><div class="figcaption">overview_snakemake-mlsa-ani</div>
+</div>
 <div id="mlsa-and-mlst-are-related-but-not-identical" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -428,7 +431,7 @@ of several loci, often for phylogenetic placement.</p>
 <p><strong>MLST</strong> means multilocus sequence typing: assignment of
 allele profiles or sequence types using a formal typing scheme. MLST is
 for example used for <em>Cryptococcus neofrmans</em> and <em>C.
-gattii</em> typing [(ref)][<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/" class="external-link uri">https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/</a>].</p>
+gattii</em> typing <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2884100/" class="external-link">(ref)</a>.</p>
 <p>This episode uses the term <strong>MLSA</strong> because the workflow
 extracts selected loci, aligns them, concatenates them, and builds a
 phylogenetic tree. If a different workflow assigns formal allele numbers
@@ -532,7 +535,7 @@ headers?</li>
   Expected reasoning
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The configured loci are the entries under <code>genes:</code> in
 <code>config/config.yaml</code>. In the example configuration these
@@ -698,7 +701,7 @@ way as a complete sample?</li>
   Expected reasoning
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>Placeholder</strong>, the answer depends on the course
 dataset.</p>
@@ -799,7 +802,7 @@ as source, sampling date, or resistance status?</li>
   Expected reasoning
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>You can conclude that some samples are more similar than others at
 the selected MLSA loci. You may also identify samples that are
@@ -863,7 +866,7 @@ mainly provide broader context?</li>
   Expected reasoning
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>ANI and MLSA answer related but different questions. MLSA uses
 selected loci, while ANI summarises similarity across larger portions of
